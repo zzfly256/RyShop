@@ -1,0 +1,10 @@
+@import url(spectre.css);
+body {
+  background: rgba(241, 241, 241, 0.73); }
+
+.login-panel {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px; }
+
+/*# sourceMappingURL=style.css.map */

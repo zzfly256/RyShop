@@ -23,4 +23,12 @@ body {
   height: 200%;
   float: left; }
 
+.btn-delete:hover {
+  border-color: #F44336;
+  background: #F44336; }
+
+.btn-search:hover {
+  border-color: #4CAF50;
+  background: #4CAF50; }
+
 /*# sourceMappingURL=style.css.map */

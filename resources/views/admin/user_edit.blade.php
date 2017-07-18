@@ -29,7 +29,7 @@
                 {!! Form::label('QQ',null,["class"=>"form-label"]) !!}
                 {!! Form::text('qq',$user->qq,["class"=>"form-input"]) !!}
 
-                {!! Form::submit('保存',["class"=>"btn btn-primary pull-left","style"=>"margin-top:10px"]) !!}
+                {!! Form::submit('保存',["class"=>"btn","style"=>"margin-top:10px"]) !!}
                 {!!  Form::close() !!}
 
             </div>

@@ -60,7 +60,7 @@
                             <td>EasyPanel</td>
                             <td>
                                 <button class="btn">编辑</button>
-                                <button class="btn">删除</button>
+                                <button class="btn btn-delete">删除</button>
                             </td>
                         </tr>
                         <tr>

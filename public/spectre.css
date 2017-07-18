@@ -398,7 +398,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 a {
-  color: #5764c6;
+  color: #2196F3;
   outline: none;
   text-decoration: none;
 }
@@ -589,9 +589,9 @@ abbr[title] {
   -moz-appearance: none;
   appearance: none;
   background: #fff;
-  border: .1rem solid #5764c6;
+  border: .1rem solid #2196F3;
   border-radius: .2rem;
-  color: #5764c6;
+  color: #2196F3;
   cursor: pointer;
   display: inline-block;
   font-size: 1.4rem;
@@ -615,8 +615,8 @@ abbr[title] {
   text-decoration: none;
 }
 .btn:hover {
-  background: #5764c6;
-  border-color: #4c59c2;
+  background: #2196F3;
+  border-color: #2196F3;
   color: #fff;
   text-decoration: none;
 }
@@ -635,15 +635,15 @@ abbr[title] {
   pointer-events: none;
 }
 .btn.btn-primary {
-  background: #5764c6;
-  border-color: #4c59c2;
+  background: #2196F3;
+  border-color: #2196F3;
   color: #fff;
 }
 .btn.btn-primary:focus,
 .btn.btn-primary:hover {
-  background: #4452c0;
-  border-color: #3e4cb6;
-  color: #fff;
+  background: #fff;
+  border-color: #2196F3;
+  color: #2196F3;
 }
 .btn.btn-primary:active,
 .btn.btn-primary.active {
@@ -658,13 +658,13 @@ abbr[title] {
 .btn.btn-link {
   background: transparent;
   border-color: transparent;
-  color: #5764c6;
+  color: #8689a0;
 }
 .btn.btn-link:focus,
 .btn.btn-link:hover,
 .btn.btn-link:active,
 .btn.btn-link.active {
-  color: #3b49af;
+  color: #2196F3;
 }
 .btn.btn-sm {
   font-size: 1.2rem;
@@ -786,8 +786,8 @@ abbr[title] {
   width: 100%;
 }
 .form-input:focus {
-  border-color: #5764c6;
-  box-shadow: 0 0 0 .2rem rgba(87, 100, 198, .15);
+  box-shadow: 0 0 0 0.2rem rgba(3, 169, 244, 0.08);
+  border: 2px solid rgba(33, 150, 243, 0.28);
 }
 .form-input::-webkit-input-placeholder {
   color: #acb3c2;
@@ -1163,7 +1163,7 @@ input.disabled + .form-icon {
   margin: .4rem 0;
 }
 .label {
-  background: #f8f9fa;
+  background: rgba(33, 150, 243, 0.09);
   border-radius: .2rem;
   color: #5b657a;
   display: inline-block;
@@ -1172,7 +1172,7 @@ input.disabled + .form-icon {
   vertical-align: baseline;
 }
 .label.label-primary {
-  background: #5764c6;
+  background: rgba(33, 150, 243, 0.68);
   color: #fff;
 }
 .label.label-success {
@@ -2022,7 +2022,7 @@ code {
 }
 .card {
   background: #fff;
-  border: .1rem solid #f0f1f4;
+  border: .1rem solid rgba(227, 227, 227, 0.89);
   border-radius: .2rem;
   display: block;
 }
@@ -2140,7 +2140,7 @@ code {
 }
 .menu .menu-item > a:focus,
 .menu .menu-item > a:hover {
-  color: #5764c6;
+  color: #2196F3;
 }
 .menu .menu-item > a:active,
 .menu .menu-item > a.active {

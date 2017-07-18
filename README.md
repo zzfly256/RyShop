@@ -34,3 +34,20 @@ Updated at 7/18/2017
 - 用户编辑
 - 用户删除
 
+## 数据表字段
+### 用户部分
+- id increments
+- name string
+- email string
+- password string
+- qq string
+- level interger
+- timestamps
+
+### 商品部分
+- id increments
+- name string
+- model string
+- price double
+- description longtext
+- panel interger

@@ -16,7 +16,7 @@ class GoodController extends Controller
      */
     public function index()
     {
-        echo "233.";
+        return view("good_index");
     }
 
     /**

@@ -1,10 +1,30 @@
 @import url(spectre.css);
+@import url(spectre-icons.css);
 
 body{
-  background: rgba(241, 241, 241, 0.73);
+  background: #ffffff;
 }
+.navbar-background{
+  background: rgba(241, 241, 241, 0.73);
+  padding:10px 0;
+  box-shadow: 0 0.1rem 0.1rem rgba(69, 77, 93, 0.16);
+  margin-bottom:10px;
+}
+.navbar{
+  //background: rgba(241, 241, 241, 0.73);
+}
+.menu .menu-item > a{
+  text-align: left;
+}
+
 .login-panel{
   width: 400px;
   margin:50px auto;
   padding: 20px;
+}
+.login-panel-background{
+  background: rgba(241, 241, 241, 0.73);
+  width: 100%;
+  height: 200%;
+  float: left;
 }

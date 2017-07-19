@@ -10,7 +10,8 @@
             <div class="column col-3 col-md-12">
                 @include("admin.sidebar")
             </div>
-            <div class="column col-9 col-md-12 padding-30">
+            <div class="column col-9 col-md-12">
+                <div class="padding-30 card">
                 {!!  Form::open(['url'=>'/admin/host/add']) !!}
                 <div class="form-group">
                     {!! Form::label('名称',null,["class"=>"form-label"]) !!}
@@ -30,6 +31,7 @@
                     {!! Form::submit('添加',["class"=>"btn btn-default"]) !!}
                 </div>
                 {!!  Form::close() !!}
+            </div>
             </div>
         </div>
     </div>

@@ -2,13 +2,14 @@
 @import url(spectre-icons.css);
 
 body{
-  background: #ffffff;
+  background: #f1f1f1;
 }
 .padding-30{
-  padding: 0px 30px;
+  padding: 15px 20px;
+  background: #fff;
 }
 .navbar-background{
-  background: rgba(241, 241, 241, 0.73);
+  background: #ffffff;
   min-height: 50px;
   line-height:50px;
   box-shadow: 0 0.1rem 0.1rem rgba(69, 77, 93, 0.16);
@@ -27,7 +28,8 @@ body{
   height: 50px;
   line-height: 50px;
   &:hover{
-    background: #f1f1f1;
+    color: #8689a0!important;
+    background: rgba(241, 241, 241, 0.55);
   }
 }
 

@@ -18,7 +18,7 @@ class CreateGoodTable extends Migration
             $table->string('model')->unique();
             $table->double('price');
             $table->longText('description');
-            $table->integer('panel');
+            $table->string('panel');
         });
     }
 

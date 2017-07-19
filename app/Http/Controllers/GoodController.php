@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Good;
+use App\User;
 
 class GoodController extends Controller
 {
@@ -16,7 +18,8 @@ class GoodController extends Controller
      */
     public function index()
     {
-        return view("good_index");
+        $good = Good::all();
+        return view("good_index",compact("good"));
     }
 
     /**
@@ -26,7 +29,8 @@ class GoodController extends Controller
      */
     public function create()
     {
-        //
+        $user_count = User::all()->count();
+        return view("admin.host_add")->with("user_count",$user_count);
     }
 
     /**
@@ -37,7 +41,9 @@ class GoodController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Good::create($input);
+        return redirect("/admin/host");
     }
 
     /**

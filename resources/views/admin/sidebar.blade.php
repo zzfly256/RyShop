@@ -4,7 +4,7 @@
     </li>
     <!-- menu item -->
     <li class="menu-item">
-        <a href="#">
+        <a href="/admin/host/add">
             <i class="icon icon-plus"></i> 添加主机
         </a>
         <a href="/admin/host">

@@ -11,6 +11,7 @@ post('/auth/login','Auth\AuthController@postLogin');
 get('/auth/register','Auth\AuthController@getRegister');
 post('/auth/register','Auth\AuthController@postRegister');
 get('/auth/logout','Auth\AuthController@getLogout');
+
 // 前台用户管理
 get('/auth/home/{id}','AdminController@user_home');
 get('/auth/home/{id}/edit','AdminController@user_front_edit');
@@ -18,7 +19,11 @@ patch('/auth/home/{id}','AdminController@user_front_update');
 
 // 管理员面板
 get('/admin','AdminController@host_index');
+// 主机部分
 get('/admin/host','AdminController@host_index');
+get('/admin/host/add','GoodController@create');
+post('/admin/host/add','GoodController@store');
+// 用户部分
 get('/admin/users','AdminController@users_index');
 delete('admin/users/{id}','AdminController@user_destroy');
 get('admin/users/{id}/edit','AdminController@user_edit');

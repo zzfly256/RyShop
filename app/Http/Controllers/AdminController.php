@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\User;
+use App\Good;
 use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
@@ -17,8 +18,9 @@ class AdminController extends Controller
      */
     public function host_index()
     {
+        $good = Good::all();
         $user_count = User::all()->count();
-        return view("admin.admin_index")->with("user_count",$user_count);
+        return view("admin.host_index",compact('good'))->with("user_count",$user_count);
     }
 
     public function users_index()

@@ -1,7 +1,7 @@
-@section('title')
-    虚拟主机商品列表
-@stop
 @include('admin.if')
+@section('title')
+    添加虚拟主机
+@stop
 @include('header')
 @include('nav')
 <section class="container grid-960">
@@ -22,10 +22,9 @@
                     {!! Form::label('简洁描述',null,["class"=>"form-label"]) !!}
                     {!! Form::textarea('description',null,["class"=>"form-input","rows"=>"3"]) !!}
                     {!! Form::label('详细页描述',null,["class"=>"form-label"]) !!}
-                    {!! Form::textarea('description',null,["class"=>"form-input"]) !!}
+                    {!! Form::textarea('details',null,["class"=>"form-input"]) !!}
                     {!! Form::label('对接模块',null,["class"=>"form-label"]) !!}
                     {!! Form::select('panel', ['ep1'=>'EasyPanel 1'],"ep1",["class"=>"form-input"]) !!}
-                    {!! Form::hidden('level','2') !!}
                 </div>
                 <div class="form-group" style="margin-top: 20px;">
                     {!! Form::submit('添加',["class"=>"btn btn-default"]) !!}

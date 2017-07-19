@@ -1,7 +1,7 @@
+@include('admin.if')
 @section('title')
     虚拟主机商品列表
 @stop
-@include('admin.if')
 @include('header')
 @include('nav')
 <section class="container grid-960">
@@ -30,8 +30,12 @@
                             <td>{{$goodinfo->price}}</td>
                             <td>{{$goodinfo->panel}}</td>
                             <td>
-                                <button class="btn">编辑</button>
-                                <button class="btn">删除</button>
+                                <div class="input-group input-inline">
+                                    <a class="btn" href="/admin/host/{{$goodinfo->id}}/edit">编辑</a>
+                                    {!!  Form::model($good,['url'=>'/admin/host/'.$goodinfo->id,'method'=>'DELETE']) !!}
+                                    {!! Form::submit('删除',["class"=>"btn btn-delete","style"=>"margin-left:5px"]) !!}
+                                    {!!  Form::close() !!}
+                                </div>
                             </td>
                         </tr>
                         @endforeach

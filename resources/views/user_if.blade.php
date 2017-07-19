@@ -5,6 +5,6 @@
             这位朋友，请不要搞笑好嘛？
         </section>
     </div>
-    @include("good_index");
+    {{--@include("user_index");--}}
     <?php die();?>
 @endif

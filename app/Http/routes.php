@@ -23,6 +23,9 @@ get('/admin','AdminController@host_index');
 get('/admin/host','AdminController@host_index');
 get('/admin/host/add','GoodController@create');
 post('/admin/host/add','GoodController@store');
+get('/admin/host/{id}/edit','GoodController@edit');
+delete('admin/host/{id}','GoodController@destroy');
+patch('admin/host/{id}','GoodController@update');
 // 用户部分
 get('/admin/users','AdminController@users_index');
 delete('admin/users/{id}','AdminController@user_destroy');

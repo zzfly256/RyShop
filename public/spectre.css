@@ -857,7 +857,7 @@ textarea.form-input {
   padding-right: 2.4rem;
 }
 .form-select:focus {
-  border-color: #5764c6;
+  border-color: #2196F3;
   box-shadow: 0 0 0 .2rem rgba(87, 100, 198, .15);
 }
 .form-select::-ms-expand {
@@ -2055,8 +2055,8 @@ code {
   font-size: 2rem;
 }
 .card .card-subtitle {
-  color: #bbc1cd;
-  font-size: 1.2rem;
+  color: #89a1b3;
+  font-size: 1.4rem;
 }
 .chip {
   -webkit-align-items: center;

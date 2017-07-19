@@ -1,7 +1,7 @@
+@include('admin.if')
 @section('title')
     用户编辑
 @stop
-@include('admin.if')
 @include('header')
 @include('nav')
 <section class="container grid-960">

@@ -2,7 +2,7 @@
     <section class="grid-header container grid-960">
         <header class="navbar">
             <section class="navbar-section">
-                <a href="/" class="navbar-brand mr-10">RyShop</a>
+                <a href="/" class="navbar-brand">RyShop</a>
                 <a href="/good" class="btn btn-link">主机列表</a>
                 @if(Auth::user())
                 <a href="/order" class="btn btn-link">我的主机</a>

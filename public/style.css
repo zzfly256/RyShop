@@ -8,12 +8,21 @@ body {
 
 .navbar-background {
   background: rgba(241, 241, 241, 0.73);
-  padding: 10px 0;
+  min-height: 50px;
+  line-height: 50px;
   box-shadow: 0 0.1rem 0.1rem rgba(69, 77, 93, 0.16);
   margin-bottom: 10px; }
 
 .menu .menu-item > a {
   text-align: left; }
+
+.navbar-section a {
+  display: block;
+  padding: 0 7px;
+  height: 50px;
+  line-height: 50px; }
+  .navbar-section a:hover {
+    background: #f1f1f1; }
 
 .login-panel {
   width: 400px;

@@ -1,7 +1,7 @@
+@include('admin.if')
 @section('title')
     用户列表
 @stop
-@include('admin.if')
 @include('header')
 @include('nav')
 <section class="container grid-960">
@@ -26,7 +26,7 @@
                         @foreach($user as $userinfo)
                         <tr>
                             <td>{{$userinfo->id}}</td>
-                            <td>{{$userinfo->name}}</td>
+                            <td>@if($userinfo->level==0) <font color="#2196F3"> {{$userinfo->name}}</font> @else {{$userinfo->name}} @endif</td>
                             <td>{{$userinfo->email}}</td>
                             <td>{{$userinfo->qq}}</td>
                             <td>

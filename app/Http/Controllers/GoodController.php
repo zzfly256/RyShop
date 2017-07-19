@@ -65,7 +65,9 @@ class GoodController extends Controller
      */
     public function edit($id)
     {
-        //
+        $good = Good::findOrFail($id);
+        $user_count = User::all()->count();
+        return view("admin.host_edit",compact('good'))->with("user_count",$user_count);
     }
 
     /**
@@ -77,7 +79,10 @@ class GoodController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $good = Good::findOrFail($id);
+        $input = $request->all();
+        $good->update($input);
+        return redirect("/admin/host/");
     }
 
     /**
@@ -88,6 +93,8 @@ class GoodController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $good = Good::findOrFail($id);
+        $good->delete();
+        return redirect('/admin/host');
     }
 }

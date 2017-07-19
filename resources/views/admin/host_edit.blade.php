@@ -1,7 +1,7 @@
-@section('title')
-用户编辑
-@stop
 @include('admin.if')
+@section('title')
+    编辑虚拟主机
+@stop
 @include('header')
 @include('nav')
 <section class="container grid-960">
@@ -12,22 +12,25 @@
             </div>
             <div class="column col-9 col-md-12">
                 <div class="padding-30">
-                    {!!  Form::model($user,['url'=>'/admin/users/'.$user->id,'method'=>'PATCH']) !!}
+                    {!!  Form::model($good,['url'=>'/admin/host/'.$good->id,'method'=>'PATCH']) !!}
 
-                    {!! Form::label('用户名',null,["class"=>"form-label"]) !!}
-                    {!! Form::text('name',$user->name,["class"=>"form-input"]) !!}
+                    {!! Form::label('名称',null,["class"=>"form-label"]) !!}
+                    {!! Form::text('name',$good->name,["class"=>"form-input"]) !!}
 
-                    {!! Form::label('密码',null,["class"=>"form-label"]) !!}
-                    {!! Form::text('the_password',null,["class"=>"form-input","placeholder"=>"密码非修改请勿填写"]) !!}
+                    {!! Form::label('型号',null,["class"=>"form-label"]) !!}
+                    {!! Form::text('model',$good->model,["class"=>"form-input","placeholder"=>"密码非修改请勿填写"]) !!}
 
-                    {!! Form::label('用户权限',null,["class"=>"form-label"]) !!}
-                    {!! Form::select('level', ['0'=>'管理员','1'=>'普通用户'], $user->level,["class"=>"form-select"]) !!}
+                    {!! Form::label('价格（年付）',null,["class"=>"form-label"]) !!}
+                    {!! Form::text('price',$good->price,["class"=>"form-input"]) !!}
 
-                    {!! Form::label('邮箱',null,["class"=>"form-label"]) !!}
-                    {!! Form::text('email',$user->email,["class"=>"form-input"]) !!}
+                    {!! Form::label('简洁描述',null,["class"=>"form-label"]) !!}
+                    {!! Form::textarea('description',$good->description,["class"=>"form-input","rows"=>"3"]) !!}
 
-                    {!! Form::label('QQ',null,["class"=>"form-label"]) !!}
-                    {!! Form::text('qq',$user->qq,["class"=>"form-input"]) !!}
+                    {!! Form::label('详情页描述',null,["class"=>"form-label"]) !!}
+                    {!! Form::textarea('details',$good->details,["class"=>"form-input"]) !!}
+
+                    {!! Form::label('对接模块',null,["class"=>"form-label"]) !!}
+                    {!! Form::select('panel', ['ep1'=>'EasyPanel 1'],"ep1",["class"=>"form-input"]) !!}
 
                     {!! Form::submit('保存',["class"=>"btn","style"=>"margin-top:10px"]) !!}
                     {!!  Form::close() !!}

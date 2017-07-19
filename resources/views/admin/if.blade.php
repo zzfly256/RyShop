@@ -6,5 +6,5 @@
         </section>
     </div>
     @include("good_index");
-
+    <?php die();?>
 @endif

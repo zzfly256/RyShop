@@ -11,6 +11,7 @@ post('/auth/login','Auth\AuthController@postLogin');
 get('/auth/register','Auth\AuthController@getRegister');
 post('/auth/register','Auth\AuthController@postRegister');
 get('/auth/logout','Auth\AuthController@getLogout');
+get('/auth/home/','Auth\AuthController@getLogin');
 
 // 管理员面板
 get('/admin','AdminController@host_index');

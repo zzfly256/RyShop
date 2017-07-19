@@ -1,5 +1,5 @@
 @section('title')
-    虚拟主机商品列表
+    用户列表
 @stop
 @include('admin.if')
 @include('header')
@@ -8,14 +8,14 @@
     <div class="container">
         <div class="columns">
             <div class="column col-3 col-md-12">
-            @include("admin.nav")
+            @include("admin.sidebar")
             </div>
             <div class="column col-9 col-md-12">
                 <div class="card">
                     <table class="table table-striped table-hover">
                         <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>UID</th>
                             <th>用户名</th>
                             <th>邮箱</th>
                             <th>QQ</th>

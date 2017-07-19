@@ -1,5 +1,5 @@
 @section('title')
-    虚拟主机商品列表
+    用户编辑
 @stop
 @include('admin.if')
 @include('header')
@@ -8,10 +8,10 @@
     <div class="container">
         <div class="columns">
             <div class="column col-3 col-md-12">
-                @include("admin.nav")
+                @include("admin.sidebar")
             </div>
             <div class="column col-9 col-md-12">
-
+                <div class="padding-30">
                 {!!  Form::model($user,['url'=>'/admin/users/'.$user->id,'method'=>'PATCH']) !!}
 
                 {!! Form::label('用户名',null,["class"=>"form-label"]) !!}
@@ -31,7 +31,7 @@
 
                 {!! Form::submit('保存',["class"=>"btn","style"=>"margin-top:10px"]) !!}
                 {!!  Form::close() !!}
-
+                </div>
             </div>
         </div>
     </div>

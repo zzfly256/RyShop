@@ -647,8 +647,8 @@ abbr[title] {
 }
 .btn.btn-primary:active,
 .btn.btn-primary.active {
-  background: #3f4eba;
-  border-color: #3b49af;
+  background: rgba(33, 150, 243, 0.8);
+  border-color: rgba(33, 150, 243, 0.8);
   color: #fff;
 }
 .btn.btn-primary.loading::after {

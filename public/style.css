@@ -3,6 +3,9 @@
 body {
   background: #ffffff; }
 
+.padding-30 {
+  padding: 0px 30px; }
+
 .navbar-background {
   background: rgba(241, 241, 241, 0.73);
   padding: 10px 0;

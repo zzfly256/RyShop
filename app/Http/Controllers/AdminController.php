@@ -17,13 +17,21 @@ class AdminController extends Controller
      */
     public function host_index()
     {
-        return view("admin.admin_index");
+        $user_count = User::all()->count();
+        return view("admin.admin_index")->with("user_count",$user_count);
     }
 
     public function users_index()
     {
         $user = User::all();
-        return view("admin.users_index",compact('user'));
+        $user_count = User::all()->count();
+        return view("admin.users_index",compact('user'))->with("user_count",$user_count);
+    }
+
+    protected function user_home($id)
+    {
+        $user = User::findOrFail($id);
+        return view("user_index",compact('user'))->with("current_id",$id);
     }
 
     /**
@@ -67,7 +75,14 @@ class AdminController extends Controller
     public function user_edit($id)
     {
         $user = User::findOrFail($id);
-        return view("admin.user_edit",compact('user'));
+        $user_count = User::all()->count();
+        return view("admin.user_edit",compact('user'))->with("user_count",$user_count);
+    }
+
+    public function user_front_edit($id)
+    {
+        $user = User::findOrFail($id);
+        return view("user_edit",compact('user'))->with("current_id",$id);
     }
 
     /**
@@ -87,6 +102,18 @@ class AdminController extends Controller
         }
         $user->update($input);
         return redirect("/admin/users/");
+    }
+
+    public function user_front_update(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $input = $request->all();
+        if(!empty($request->input('the_password'))) {
+            $new_password = bcrypt($request->input('the_password'));
+            $input = array_merge(['password'=>$new_password],$input);
+        }
+        $user->update($input);
+        return redirect("/auth/home/".$id)->with("current_id",$id);
     }
 
     /**

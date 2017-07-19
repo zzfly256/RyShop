@@ -21,7 +21,7 @@
                         </a>
                         <!-- menu component -->
                         <ul class="menu">
-                            <li class="menu-item"><a href="/auth/logout" class="btn btn-link">用户中心</a></li>
+                            <li class="menu-item"><a href="/auth/home/{{Auth::user()->id}}" class="btn btn-link">个人资料</a></li>
                             <li class="menu-item"><a href="/auth/logout" class="btn btn-link">退出</a></li>
                         </ul>
                     </div>

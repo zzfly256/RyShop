@@ -8,7 +8,7 @@
     <div class="container">
         <div class="columns">
             <div class="column col-3 col-md-12">
-                @include("admin.nav")
+                @include("admin.sidebar")
             </div>
             <div class="column col-9 col-md-12">
                 <div class="card">

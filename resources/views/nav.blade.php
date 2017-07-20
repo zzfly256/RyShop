@@ -3,7 +3,7 @@
         <header class="navbar">
             <section class="navbar-section">
                 <a href="/" class="navbar-brand">RyShop</a>
-                <a href="/good" class="btn btn-link">主机列表</a>
+                <a href="/host" class="btn btn-link">主机列表</a>
                 @if(Auth::user())
                 <a href="/order" class="btn btn-link">我的主机</a>
                 <a href="/order" class="btn btn-link">我的订单</a>

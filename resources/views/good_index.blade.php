@@ -21,7 +21,7 @@
                         {!! $goodinfo->description !!}
                     </div>
                     <div class="card-footer">
-                        <a class="btn btn-primary">购买</a>
+                        <a class="btn btn-primary" href="/host/{{$goodinfo->model}}">购买</a>
                     </div>
                 </div>
             </div>

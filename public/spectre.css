@@ -72,6 +72,9 @@ hr {
   /* 1 */
   overflow: visible;
   /* 2 */
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
 }
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers. (removed)
@@ -2559,9 +2562,7 @@ code {
   white-space: nowrap;
 }
 .toast {
-  background: rgba(69, 77, 93, .9);
-  border: .1rem solid #454d5d;
-  border-color: #454d5d;
+  background: rgba(69, 77, 93, 0.66);
   border-radius: .2rem;
   color: #fff;
   display: block;

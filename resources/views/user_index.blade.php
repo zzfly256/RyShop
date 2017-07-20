@@ -25,7 +25,7 @@
                         <div class="empty-action">
                             <a class="btn btn-primary" href="/auth/home/{{Auth::user()->id}}/edit">编辑资料</a>
                         </div>
-                    </div
+                    </div>
                 </div>
             </div>
 

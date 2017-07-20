@@ -20,9 +20,9 @@
                     {!! Form::text('model',null,["class"=>"form-input"]) !!}
                     {!! Form::label('价格（年付）',null,["class"=>"form-label"]) !!}
                     {!! Form::text('price',null,["class"=>"form-input"]) !!}
-                    {!! Form::label('简洁描述',null,["class"=>"form-label"]) !!}
+                    {!! Form::label('简洁描述（支持HTML）',null,["class"=>"form-label"]) !!}
                     {!! Form::textarea('description',null,["class"=>"form-input","rows"=>"3"]) !!}
-                    {!! Form::label('详细页描述',null,["class"=>"form-label"]) !!}
+                    {!! Form::label('详细页描述（支持HTML）',null,["class"=>"form-label"]) !!}
                     {!! Form::textarea('details',null,["class"=>"form-input"]) !!}
                     {!! Form::label('对接模块',null,["class"=>"form-label"]) !!}
                     {!! Form::select('panel', ['ep1'=>'EasyPanel 1'],"ep1",["class"=>"form-input"]) !!}

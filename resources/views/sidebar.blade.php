@@ -4,10 +4,10 @@
     </li>
     <!-- menu item -->
     <li class="menu-item">
-        <a href="/host">
+        <a href="/myhost">
             <i class="icon icon-link"></i> 我的主机
         </a>
-        <a href="/order">
+        <a href="/myorder">
             <i class="icon icon-link"></i> 我的订单
         </a>
     </li>

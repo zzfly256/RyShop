@@ -23,10 +23,10 @@
                     {!! Form::label('价格（年付）',null,["class"=>"form-label"]) !!}
                     {!! Form::text('price',$good->price,["class"=>"form-input"]) !!}
 
-                    {!! Form::label('简洁描述',null,["class"=>"form-label"]) !!}
+                    {!! Form::label('简洁描述（支持HTML）',null,["class"=>"form-label"]) !!}
                     {!! Form::textarea('description',$good->description,["class"=>"form-input","rows"=>"3"]) !!}
 
-                    {!! Form::label('详情页描述',null,["class"=>"form-label"]) !!}
+                    {!! Form::label('详情页描述（支持HTML）',null,["class"=>"form-label"]) !!}
                     {!! Form::textarea('details',$good->details,["class"=>"form-input"]) !!}
 
                     {!! Form::label('对接模块',null,["class"=>"form-label"]) !!}

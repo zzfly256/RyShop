@@ -45,4 +45,38 @@ body {
   border-color: #4CAF50;
   background: #4CAF50; }
 
+.host-info {
+  padding: 10px; }
+  .host-info h5 {
+    margin-bottom: 1rem; }
+    .host-info h5 .label {
+      margin-left: 10px; }
+
+.host-detail {
+  line-height: 2; }
+  .host-detail li {
+    margin-top: 0px; }
+
+.host-tips {
+  font-size: 1rem;
+  border-radius: 0px; }
+
+.buy-btn {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: rgba(255, 87, 34, 0.85);
+  padding: 1rem;
+  color: #fff;
+  text-align: center; }
+  .buy-btn:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #FF5722;
+    -webkit-transition: 200ms;
+    -moz-transition: 200ms;
+    -ms-transition: 200ms;
+    -o-transition: 200ms;
+    transition: 200ms; }
+
 /*# sourceMappingURL=style.css.map */

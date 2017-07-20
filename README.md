@@ -56,4 +56,23 @@ Updated at 7/20/2017
 - model string
 - price double
 - description longtext
-- panel interger
+- panel string
+- timestamps
+
+### 订单部分
+- id increments
+- no string
+- model string
+- user string
+- price double
+- end_at string
+- timestamps
+
+### 已开通主机部分
+- id increments
+- order string
+- user string
+- host_name
+- host_pass
+- host_panel
+- timestamps

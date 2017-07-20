@@ -1,6 +1,7 @@
 <?php
 // 物品管理
-resource('/good','GoodController');
+resource('/host','GoodController');
+get('/host/{model}','GoodController@show');
 
 // 主页
 get('/','GoodController@index');

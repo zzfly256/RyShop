@@ -47,6 +47,11 @@
     @endif
 </ul>
 @if(Auth::User())
-    <a class="buy-btn" href="">立即购买</a>
+    {!!  Form::open(['url'=>'/order/']) !!}
+    {!! Form::hidden('no',$order_no) !!}
+    {!! Form::hidden('model',$good[0]->model) !!}
+    {!! Form::hidden('user_id',Auth::User()->id) !!}
+    {!! Form::submit('立即购买',["class"=>"buy-btn"]) !!}
+    {!!  Form::close() !!}
 @endif
 

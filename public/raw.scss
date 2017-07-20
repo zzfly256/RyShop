@@ -85,6 +85,11 @@ body{
   padding: 1rem;
   color: #fff;
   text-align: center;
+  border:0px;
+  &:active {
+    text-decoration: none;
+    color: #fff;
+  }
   &:hover{
     text-decoration: none;
     color:#fff;

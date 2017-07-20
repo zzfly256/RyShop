@@ -68,7 +68,11 @@ body {
   background: rgba(255, 87, 34, 0.85);
   padding: 1rem;
   color: #fff;
-  text-align: center; }
+  text-align: center;
+  border: 0px; }
+  .buy-btn:active {
+    text-decoration: none;
+    color: #fff; }
   .buy-btn:hover {
     text-decoration: none;
     color: #fff;

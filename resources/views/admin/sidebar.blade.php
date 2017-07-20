@@ -10,6 +10,9 @@
         <a href="/admin/host">
             <i class="icon icon-link"></i> 主机列表
         </a>
+        <a href="/admin/vhost">
+            <i class="icon icon-link"></i> 已开通主机
+        </a>
     </li>
     <li class="divider" data-content="用户管理">
     </li>

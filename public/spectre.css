@@ -2723,7 +2723,7 @@ code {
 .divider[data-content]::after,
 .divider-vert[data-content]::after {
   background: #fff;
-  color: #e7e9ed;
+  color: #bec6d4;
   content: attr(data-content);
   display: inline-block;
   font-size: 1.2rem;

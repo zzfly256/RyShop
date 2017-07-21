@@ -66,6 +66,7 @@ Updated at 7/20/2017
 - user string
 - price double
 - end_at string
+- payout boolean
 - timestamps
 
 ### 已开通主机部分

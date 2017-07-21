@@ -1,5 +1,5 @@
 @section('title')
-    虚拟主机商品列表
+    修改个人资料
 @stop
 @include('header')
 @include('nav')
@@ -12,7 +12,7 @@
             </div>
             <div class="column col-9 col-md-12">
                 <div class="padding-30">
-                {!!  Form::model($user,['url'=>'/auth/home/'.$user->id,'method'=>'PATCH']) !!}
+                {!!  Form::model($user,['url'=>'/home','method'=>'PATCH']) !!}
 
                 {!! Form::label('用户名',null,["class"=>"form-label"]) !!}
                 {!! Form::text('name',$user->name,["class"=>"form-input"]) !!}

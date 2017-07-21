@@ -1,7 +1,6 @@
 @section('title')
     个人资料
 @stop
-@include('user_if')
 @include('header')
 @include('nav')
 
@@ -20,10 +19,10 @@
                         <h4 class="empty-title">{{Auth::user()->name}}  <small><small><small>UID:{{Auth::user()->id}}</small></small></small></h4>
                         <p class="empty-subtitle">{{Auth::user()->email}} - QQ：{{Auth::user()->qq}}</p>
 
-                        <p class="empty-subtitle"><small>注册于 <?php echo explode(" ",Auth::user()->created_at)[0];?>，拥有 <b>4</b> 台主机 <b>4</b> 个订单</small></p>
+                        <p class="empty-subtitle"><small>注册于 <?php echo explode(" ",Auth::user()->created_at)[0];?>，拥有 <b>4</b> 台主机 <b>{{Auth::user()->order->count()}}</b> 个订单</small></p>
 
                         <div class="empty-action">
-                            <a class="btn btn-primary" href="/auth/home/{{Auth::user()->id}}/edit">编辑资料</a>
+                            <a class="btn btn-primary" href="/home/edit">编辑资料</a>
                         </div>
                     </div>
                 </div>

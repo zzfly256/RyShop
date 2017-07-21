@@ -7,6 +7,9 @@ body {
   padding: 15px 20px;
   background: #fff; }
 
+.big-font {
+  font-size: 120%; }
+
 .navbar-background {
   background: #ffffff;
   min-height: 50px;
@@ -82,5 +85,26 @@ body {
     -ms-transition: 200ms;
     -o-transition: 200ms;
     transition: 200ms; }
+
+.order-item {
+  background: #ffffff;
+  padding: 1.5rem 1.2rem;
+  width: 100%;
+  height: auto;
+  border-top: 1px solid #eee;
+  line-height: 2; }
+  .order-item span {
+    margin-left: 7px; }
+  .order-item h6 {
+    margin-bottom: 1rem; }
+  .order-item label {
+    margin-left: 7px; }
+  .order-item .model-label {
+    margin-left: 10px; }
+
+.order-item-title {
+  padding: 1rem 1.2rem;
+  background: #fff;
+  font-size: 80%; }
 
 /*# sourceMappingURL=style.css.map */

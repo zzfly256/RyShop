@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Good;
+use App\Order;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -19,21 +21,25 @@ class AdminController extends Controller
     public function host_index()
     {
         $good = Good::all();
-        $user_count = User::all()->count();
-        return view("admin.host_index",compact('good'))->with("user_count",$user_count);
+        return view("admin.host_index",compact('good'));
     }
 
     public function users_index()
     {
         $user = User::all();
-        $user_count = User::all()->count();
-        return view("admin.users_index",compact('user'))->with("user_count",$user_count);
+        return view("admin.users_index",compact('user'));
     }
 
-    protected function user_home($id)
+    public function orders_index()
     {
-        $user = User::findOrFail($id);
-        return view("user_index",compact('user'))->with("current_id",$id);
+        $order = Order::all();
+        return view("admin.orders_index",compact('order'));
+    }
+
+    protected function user_home()
+    {
+        $user = Auth::user();
+        return view("user_index",compact('user'));
     }
 
     /**
@@ -77,14 +83,13 @@ class AdminController extends Controller
     public function user_edit($id)
     {
         $user = User::findOrFail($id);
-        $user_count = User::all()->count();
-        return view("admin.user_edit",compact('user'))->with("user_count",$user_count);
+        return view("admin.user_edit",compact('user'));
     }
 
-    public function user_front_edit($id)
+    public function user_front_edit()
     {
-        $user = User::findOrFail($id);
-        return view("user_edit",compact('user'))->with("current_id",$id);
+        $user = Auth::user();
+        return view("user_edit",compact('user'));
     }
 
     /**
@@ -106,16 +111,16 @@ class AdminController extends Controller
         return redirect("/admin/users/");
     }
 
-    public function user_front_update(Request $request, $id)
+    public function user_front_update(Request $request)
     {
-        $user = User::findOrFail($id);
+        $user = Auth::user();
         $input = $request->all();
         if(!empty($request->input('the_password'))) {
             $new_password = bcrypt($request->input('the_password'));
             $input = array_merge(['password'=>$new_password],$input);
         }
         $user->update($input);
-        return redirect("/auth/home/".$id)->with("current_id",$id);
+        return redirect("/home");
     }
 
     /**

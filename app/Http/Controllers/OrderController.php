@@ -10,6 +10,8 @@ use App\Http\Controllers\Controller;
 use App\Order;
 use App\Good;
 use App\User;
+use Illuminate\Support\Facades\Auth;
+
 class OrderController extends Controller
 {
     /**
@@ -78,11 +80,43 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function order_show($no)
     {
-        //
+        $order = Order::whereRaw("no='".$no."'")->get();
+        $order_get = $order[0];
+        return view("admin.order_show",compact('order_get'));
     }
 
+    public function order_front_show($no)
+    {
+        $order = Order::whereRaw("no='".$no."'")->get();
+        $order_get = $order[0];
+        return view("order_show",compact('order_get'));
+    }
+
+    public function show_mine()
+    {
+        if(Auth::user())
+        {
+            $order = Auth::user()->order;
+            return view("my_order",compact('order'));
+        }
+        else
+        {
+            return view("my_order");
+        }
+
+    }
+    public function show_user($id)
+    {
+        if(Auth::user() and Auth::user()->level==0)
+        {
+            $order = User::findOrFail($id)->order;
+            $user = User::findOrFail($id);
+            return view("admin.show_user_order",compact('order'))->with("user",$user);
+        }
+
+    }
     /**
      * Show the form for editing the specified resource.
      *

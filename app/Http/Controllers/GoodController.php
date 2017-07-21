@@ -29,8 +29,7 @@ class GoodController extends Controller
      */
     public function create()
     {
-        $user_count = User::all()->count();
-        return view("admin.host_add")->with("user_count",$user_count);
+        return view("admin.host_add");
     }
 
     /**
@@ -68,8 +67,7 @@ class GoodController extends Controller
     public function edit($id)
     {
         $good = Good::findOrFail($id);
-        $user_count = User::all()->count();
-        return view("admin.host_edit",compact('good'))->with("user_count",$user_count);
+        return view("admin.host_edit",compact('good'));
     }
 
     /**

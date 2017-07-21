@@ -1179,11 +1179,11 @@ input.disabled + .form-icon {
   color: #fff;
 }
 .label.label-success {
-  background: #32b643;
+  background: #4CAF50;
   color: #fff;
 }
 .label.label-warning {
-  background: #ffb700;
+  background: rgba(96, 125, 139, 0.82);
   color: #fff;
 }
 .label.label-error {

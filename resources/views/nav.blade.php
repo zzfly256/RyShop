@@ -6,7 +6,7 @@
                 <a href="/host" class="btn btn-link">主机列表</a>
                 @if(Auth::user())
                 <a href="/order" class="btn btn-link">我的主机</a>
-                <a href="/order" class="btn btn-link">我的订单</a>
+                <a href="/my_order" class="btn btn-link">我的订单</a>
                     @if(Auth::user()->level==0)
                         <a href="/admin" class="btn btn-link">管理员面板</a>
                     @endif
@@ -21,7 +21,7 @@
                         </a>
                         <!-- menu component -->
                         <ul class="menu">
-                            <li class="menu-item"><a href="/auth/home/{{Auth::user()->id}}" class="btn btn-link">个人资料</a></li>
+                            <li class="menu-item"><a href="/home" class="btn btn-link">个人资料</a></li>
                             <li class="menu-item"><a href="/auth/logout" class="btn btn-link">退出</a></li>
                         </ul>
                     </div>

@@ -63,6 +63,7 @@ class OrderController extends Controller
         //dd($cur_order->price);
         if(Order::is_succeed($apikey,$total,$cur_order))
         {
+            $cur_order->update(['payout'=>'1']);
             echo "成功支付，可惜没主机开通";
         }
         else{

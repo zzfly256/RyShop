@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     protected $table = 'orders';
-    protected $fillable = ['no', 'model', 'price', 'user_id', 'end_at'];
+    protected $fillable = ['no', 'model', 'price', 'user_id', 'end_at', 'payout'];
 
     public static function checkout($price,$id,$no)
     {
@@ -15,7 +15,7 @@ class Order extends Model
         $apiid = '13370';
         $apikey = md5('6ce72252d6962a926a26fa2c6d685f6c');
         $showurl = 'http://127.0.0.1/order/result';
-        $addnum =  'alip'.$apiid.$no;
+        $addnum =  'alip'.$apiid.'00'.$no;
 
 
         echo "

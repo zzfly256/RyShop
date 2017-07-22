@@ -12,11 +12,12 @@ class Order extends Model
     public static function checkout($price,$id,$no)
     {
 
+        // 第三方接口 API
+
         $apiid = '13370';
         $apikey = md5('6ce72252d6962a926a26fa2c6d685f6c');
         $showurl = 'http://127.0.0.1/order/result';
         $addnum =  'alip'.$apiid.'00'.$no;
-
 
         echo "
 		<form name='form1' action='https://api.jsjapp.com/plugin.php?id=add:alipay' method='POST'>
@@ -33,6 +34,9 @@ class Order extends Model
 
     public static function is_succeed($apikey,$price,$cur_order)
     {
+
+        //支付回调
+
         if($apikey!=md5('6ce72252d6962a926a26fa2c6d685f6c'.$cur_order->no)) {
             if($cur_order->price == $price){
                 return true;

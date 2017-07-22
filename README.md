@@ -63,7 +63,7 @@ Updated at 7/21/2017
 - id increments
 - no string
 - model string
-- user string
+- user_id increments
 - price double
 - end_at string
 - payout boolean
@@ -71,8 +71,11 @@ Updated at 7/21/2017
 
 ### 已开通主机部分
 - id increments
-- order string
-- user string
+- order_no string
+- model string
+- user_id increments
+- price double
+- end_at string
 - host_name
 - host_pass
 - host_panel

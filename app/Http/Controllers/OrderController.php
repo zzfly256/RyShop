@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use App\Order;
 use App\Good;
 use App\User;
+use App\Host;
 use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
@@ -62,11 +63,24 @@ class OrderController extends Controller
         $total = $_POST['total'] ? $_POST['total'] : $_GET['total'];			//接收到的支付金额
         $apikey = $_POST['apikey'] ? $_POST['apikey'] : $_GET['apikey'];		//接收到的验证加密字串
         $cur_order = Order::findOrFail($uid);
-        //dd($cur_order->price);
+        $cur_good = Good::whereRaw("model='".$cur_order->model."'")->get();
+        //dd($cur_good[0]->price);
         if(Order::is_succeed($apikey,$total,$cur_order))
         {
             $cur_order->update(['payout'=>'1']);
-            echo "成功支付，可惜没主机开通";
+            $host_name = "uid".Auth::user()->id.chr (rand(97,122)).chr (rand(97,122)).chr (rand(97,122)).chr (rand(97,122));
+            $host_pass = chr (rand(97,122)).chr (rand(97,122)).chr (rand(97,122)).chr (rand(97,122)).rand(1000,9999);
+            $host_info = ['order_no'=>$cur_order->no, 'price'=>$total, 'host_name'=>$host_name, 'host_pass'=>$host_pass, 'model'=>$cur_order->model, 'user_id'=> Auth::user()->id,'end_at'=>$cur_order->end_at,'host_panel'=>$cur_good[0]->panel];
+            Host::create($host_info);
+            if(Host::create_host($cur_good[0]->panel,$cur_order->model,$host_name,$host_pass))
+            {
+                $host_update = ['valid' => '1'];
+                $cur_host = Host::whereRaw("order_no='".$cur_order->no."'")->get();
+                $cur_host[0]->update($host_update);
+                echo "成功支付，主机开通成功";
+            }else{
+                dd("主机所在服务器通信故障，请迅速联系售后，并提供您的用户名、UID、订单号以便快速帮您补办主机");
+            }
         }
         else{
             echo "你TM想骗我主机？";

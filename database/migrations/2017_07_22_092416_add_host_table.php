@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOrderTable extends Migration
+class AddHostTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,15 @@ class CreateOrderTable extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('hosts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('no')->unique();
+            $table->string('order_no')->references('no')->on('orders');
             $table->string('model');
             $table->integer('user_id')->references('id')->on('users');
             $table->double('price');
+            $table->string('host_name');
+            $table->string('host_pass');
+            $table->string('host_panel');
             $table->longText('end_at');
             $table->timestamps();
         });
@@ -30,6 +33,6 @@ class CreateOrderTable extends Migration
      */
     public function down()
     {
-        Schema::drop('orders');
+        //
     }
 }

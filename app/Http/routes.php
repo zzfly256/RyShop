@@ -20,7 +20,7 @@ patch('/home','AdminController@user_front_update');
 
 // 管理员面板
 get('/admin','AdminController@host_index');
-// 主机部分
+// 主机（母机）部分
 get('/admin/host','AdminController@host_index');
 get('/admin/host/add','GoodController@create');
 post('/admin/host/add','GoodController@store');
@@ -41,3 +41,7 @@ get('/admin/order','AdminController@orders_index');
 get('/admin/order/{no}','OrderController@order_show');
 get('/order/{no}','OrderController@order_front_show');
 get('/admin/order/user/{id}','OrderController@show_user');
+
+//虚拟主机部分
+get('/admin/vhost','HostController@index');
+get('/my_host','HostController@show_mine');

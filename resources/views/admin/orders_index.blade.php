@@ -30,7 +30,7 @@
                                 <td>{{$orderinfo->no}}</td>
                                 <td>{{$orderinfo->model}}</td>
                                 <td>{{$orderinfo->price}}</td>
-                                <td>{{$orderinfo->user->name}}</td>
+                                <td><a href="/admin/order/user/{{$orderinfo->user_id}}">{{$orderinfo->user->name}}</a></td>
                                 <td><?php if($orderinfo->payout==1){echo '<label class="label label-success">成功</label>';}else{echo '<label class="label label-warning">未支付</label>';}?></td>
                                 <td>{{$orderinfo->end_at}}</td>
                                 <td><a href="/admin/order/{{$orderinfo->no}}" class="btn">详情</a></td>

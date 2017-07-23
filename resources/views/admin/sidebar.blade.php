@@ -5,16 +5,19 @@
     <!-- menu item -->
     <li class="menu-item">
         <a href="/admin/host/add">
-            <i class="icon icon-plus"></i> 添加主机
+            <i class="icon icon-plus"></i> 添加产品
         </a>
         <a href="/admin/host">
             <div class="menu-badge">
                 <label class="label label-primary">{{App\Good::all()->count()}}</label>
             </div>
-            <i class="icon icon-link"></i> 主机列表
+            <i class="icon icon-link"></i> 产品列表
         </a>
         <a href="/admin/vhost">
-            <i class="icon icon-link"></i> 已开通主机
+            <div class="menu-badge">
+                <label class="label label-primary">{{App\Host::all()->count()}}</label>
+            </div>
+            <i class="icon icon-link"></i> 虚拟主机
         </a>
     </li>
     <li class="divider" data-content="用户管理">

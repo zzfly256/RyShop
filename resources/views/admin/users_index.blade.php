@@ -26,12 +26,13 @@
                         @foreach($user as $userinfo)
                         <tr>
                             <td>{{$userinfo->id}}</td>
-                            <td>@if($userinfo->level==0) <font color="#2196F3"> {{$userinfo->name}}</font> @else {{$userinfo->name}} @endif</td>
+                            <td>@if($userinfo->level==0) <b> {{$userinfo->name}}</b> @else {{$userinfo->name}} @endif</td>
                             <td>{{$userinfo->email}}</td>
                             <td>{{$userinfo->qq}}</td>
                             <td>
                                 <div class="input-group input-inline">
-                                    <a class="btn btn-search" href="/admin/order/user/{{$userinfo->id}}">查询订单</a>
+                                    <a class="btn btn-order" href="/admin/order/user/{{$userinfo->id}}">查询订单</a>
+                                    <a class="btn btn-host" style="margin-left:5px" href="/admin/order/user/{{$userinfo->id}}">查询主机</a>
                                     <a class="btn" style="margin-left:5px" href="/admin/users/{{$userinfo->id}}/edit">编辑</a>
                                     {!!  Form::model($userinfo,['url'=>'/admin/users/'.$userinfo->id,'method'=>'DELETE']) !!}
                                     {!! Form::submit('删除',["class"=>"btn btn-delete","style"=>"margin-left:5px"]) !!}

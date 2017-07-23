@@ -12,7 +12,9 @@ class AddHostTable2 extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('hosts', function (Blueprint $table) {
+            $table->integer('valid')->default(0);
+        });
     }
 
     /**

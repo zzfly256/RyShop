@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Host extends Model
 {
     protected $table = 'hosts';
-    protected $fillable = ['order_no', 'model', 'price', 'user_id', 'end_at', 'host_name', 'host_pass', 'host_panel'];
+    protected $fillable = ['order_no', 'model', 'price', 'user_id', 'end_at', 'host_name', 'host_pass', 'host_panel', 'valid'];
 
     public static function create_host($panel,$model,$user,$password)
     {

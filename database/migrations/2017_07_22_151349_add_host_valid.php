@@ -12,7 +12,7 @@ class AddHostValid extends Migration
      */
     public function up()
     {
-        Schema::table('hosts', function (Blueprint $table) {
+        Schema::table('orders', function (Blueprint $table) {
             $table->integer('valid')->default(0);
         });
     }

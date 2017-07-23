@@ -1,6 +1,6 @@
 @include('admin.if')
 @section('title')
-    虚拟主机商品列表
+    已购买虚拟主机列表
 @stop
 @include('header')
 @include('nav')

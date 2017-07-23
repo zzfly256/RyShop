@@ -45,3 +45,4 @@ get('/admin/order/user/{id}','OrderController@show_user');
 //虚拟主机部分
 get('/admin/vhost','HostController@index');
 get('/my_host','HostController@show_mine');
+get('/my_host/panel/{panel}','HostController@show_panel');

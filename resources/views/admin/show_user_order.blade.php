@@ -1,6 +1,6 @@
 @include('admin.if')
 @section('title')
-    用户全部订单列表
+    用户 {{$user->name}} 全部订单列表
 @stop
 @include('header')
 @include('nav')

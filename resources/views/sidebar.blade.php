@@ -20,6 +20,9 @@
     </li>
     <!-- menu item -->
     <li class="menu-item">
+        <div class="menu-badge">
+            <label class="label label-primary">{{Auth::user()->host->count()}}</label>
+        </div>
         <a href="/my_host">
             <i class="icon icon-link"></i> 我的主机
         </a>

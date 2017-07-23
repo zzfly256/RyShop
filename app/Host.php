@@ -32,4 +32,9 @@ class Host extends Model
         }
         //dd($result);
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

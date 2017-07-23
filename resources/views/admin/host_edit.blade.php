@@ -1,6 +1,6 @@
 @include('admin.if')
 @section('title')
-    编辑虚拟主机
+    编辑主机产品
 @stop
 @include('header')
 @include('nav')

@@ -23,6 +23,26 @@ class HostController extends Controller
         return view("admin.host_list",compact("hosts"));
     }
 
+    public function show_mine()
+    {
+        if (Auth::user()) {
+            $hosts = Auth::user()->host;
+            return view("my_host", compact('hosts'));
+        } else {
+            return view("my_host");
+        }
+    }
+
+    public function show_panel($panel)
+    {
+        if($panel=="ep1")
+        {
+            return view("ep1_panel");
+        }
+        else{
+            dd("面板错误，朋友你在搞笑了吧");
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *

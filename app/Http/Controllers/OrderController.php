@@ -77,7 +77,7 @@ class OrderController extends Controller
                 $host_update = ['valid' => '1'];
                 $cur_host = Host::whereRaw("order_no='".$cur_order->no."'")->get();
                 $cur_host[0]->update($host_update);
-                echo "成功支付，主机开通成功";
+                return redirect('/my_host');
             }else{
                 dd("主机所在服务器通信故障，请迅速联系售后，并提供您的用户名、UID、订单号以便快速帮您补办主机");
             }

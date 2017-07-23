@@ -9,7 +9,7 @@
     <?php die();?>
 @endif
 @section('title')
-订单{{$order_get->no}}详情
+订单 {{$order_get->no}} 详细信息
 @stop
 @include('header')
 @include('nav')

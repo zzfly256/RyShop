@@ -54,6 +54,49 @@ class HostController extends Controller
             dd("面板错误，朋友你在搞笑了吧");
         }
     }
+
+    public function change_status($id,Request $request)
+    {
+        $host = Host::findOrFail($id);
+        if($request->input('valid')=="2")
+        {
+            if(Host::stop_host($host->host_panel,$host->host_name))
+            {
+                $host->update($request->all());
+                return redirect("/admin/vhost");
+            }
+
+        }
+        elseif($request->input('valid')=="1")
+        {
+            if(Host::start_host($host->host_panel,$host->host_name))
+            {
+                $host->update($request->all());
+                return redirect("/admin/vhost");
+            }
+        }
+        else
+        {
+            dd($host->host_panel."主机所在服务器通信故障。");
+        }
+
+    }
+
+    public function delete_host($id)
+    {
+        $host = Host::findOrFail($id);
+        if(Host::delete_host($host->host_panel,$host->host_name))
+        {
+            $host->delete();
+            return redirect("/admin/vhost");
+        }
+        else
+        {
+            dd($host->host_panel."主机所在服务器通信故障。");
+        }
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

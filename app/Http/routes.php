@@ -47,3 +47,5 @@ get('/admin/vhost','HostController@index');
 get('/admin/vhost/user/{id}','HostController@show_user');
 get('/my_host','HostController@show_mine');
 get('/my_host/panel/{panel}','HostController@show_panel');
+post('/admin/vhost/{id}','HostController@change_status');
+delete('admin/vhost/{id}','HostController@delete_host');

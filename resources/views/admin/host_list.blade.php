@@ -22,6 +22,7 @@
                             <th>价格</th>
                             <th>有效期至</th>
                             <th>状态</th>
+                            <th>管理</th>
 
                         </tr>
                         </thead>
@@ -39,9 +40,29 @@
                                         <span style="color: #4CAF50">正常</span>
                                         @elseif($hostinfo->valid==0)
                                         <span style="color: #607D8B">未开通</span>
+                                        @elseif($hostinfo->valid==2)
+                                        <span style="color: #FF9800">暂停</span>
                                         @else
-                                        <span style="color: #FF9800">过期</span>
+                                        <span style="color: #FF5722">过期</span>
                                     @endif
+                                </td>
+                                <td>
+                                    <div class="input-group input-inline">
+                                    {!!  Form::model($hostinfo,['url'=>'/admin/vhost/'.$hostinfo->id]) !!}
+                                    @if($hostinfo->valid==1)
+                                        {!! Form::hidden('valid','2') !!}
+                                        {!! Form::submit('暂停',["class"=>"btn btn-host"]) !!}
+                                    @elseif($hostinfo->valid==2)
+                                        {!! Form::hidden('valid','1') !!}
+                                        {!! Form::submit('重开',["class"=>"btn btn-order"]) !!}
+                                    @endif
+                                    @if($hostinfo->valid!=0)
+                                    {!!  Form::close() !!}
+                                    {!!  Form::model($hostinfo,['url'=>'/admin/vhost/'.$hostinfo->id,'method'=>'DELETE']) !!}
+                                    {!! Form::submit('删除',["class"=>"btn btn-delete","style"=>"margin-left:5px"]) !!}
+                                    {!!  Form::close() !!}
+                                    @endif
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach

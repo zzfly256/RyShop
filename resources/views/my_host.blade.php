@@ -25,8 +25,10 @@
                                     <div class="inline" style="color: #4CAF50">正常</div>
                                 @elseif($hostinfo->valid==0)
                                     <div class="inline" style="color: #607D8B">未开通</div>
+                                @elseif($hostinfo->valid==2)
+                                    <div class="inline"style="color: #FF9800">暂停</div>
                                 @else
-                                    <div class="inline"style="color: #FF9800">过期</div>
+                                    <div class="inline"style="color: #FF5722">过期</div>
                                 @endif
                             </span>
                             <span>有效期至：{{$hostinfo->end_at}}</span>

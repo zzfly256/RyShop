@@ -5,14 +5,14 @@
         </li>
         <!-- menu item -->
         <li class="menu-item">
-            <a href="/auth/home/{{Auth::User()->id}}">
+            <a href="/home">
                 {{Auth::User()->name}} <small><small>UID：{{Auth::User()->id}}</small></small>
             </a>
-            <a href="/auth/home/{{Auth::User()->id}}">
+            <a href="/home">
                 <small>Mail：{{Auth::User()->email}}</small>
             </a>
 
-            <a href="/auth/home/{{Auth::User()->id}}">
+            <a href="/home">
                 <small>QQ：{{Auth::User()->qq}}</small>
             </a>
 
@@ -50,7 +50,6 @@
     {!!  Form::open(['url'=>'/order/']) !!}
     {!! Form::hidden('no',$order_no) !!}
     {!! Form::hidden('model',$good[0]->model) !!}
-    {!! Form::hidden('user_id',Auth::User()->id) !!}
     {!! Form::submit('立即购买',["class"=>"buy-btn"]) !!}
     {!!  Form::close() !!}
 @endif

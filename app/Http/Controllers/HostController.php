@@ -33,6 +33,17 @@ class HostController extends Controller
         }
     }
 
+    public function show_user($id)
+    {
+        if(Auth::user() and Auth::user()->level==0)
+        {
+            $hosts = User::findOrFail($id)->host;
+            $user = User::findOrFail($id);
+            return view("admin.show_user_host",compact('hosts'))->with("user",$user);
+        }
+
+    }
+
     public function show_panel($panel)
     {
         if($panel=="ep1")

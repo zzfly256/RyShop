@@ -32,7 +32,7 @@
                             <td>
                                 <div class="input-group input-inline">
                                     <a class="btn btn-order" href="/admin/order/user/{{$userinfo->id}}">查询订单</a>
-                                    <a class="btn btn-host" style="margin-left:5px" href="/admin/order/user/{{$userinfo->id}}">查询主机</a>
+                                    <a class="btn btn-host" style="margin-left:5px" href="/admin/vhost/user/{{$userinfo->id}}">查询主机</a>
                                     <a class="btn" style="margin-left:5px" href="/admin/users/{{$userinfo->id}}/edit">编辑</a>
                                     {!!  Form::model($userinfo,['url'=>'/admin/users/'.$userinfo->id,'method'=>'DELETE']) !!}
                                     {!! Form::submit('删除',["class"=>"btn btn-delete","style"=>"margin-left:5px"]) !!}

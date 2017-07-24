@@ -29,7 +29,7 @@
                         @foreach($hosts as $hostinfo)
                             <tr>
                                 <td>{{$hostinfo->model}}</td>
-                                <td><a href="/admin/order/user/{{$hostinfo->user_id}}">{{\App\User::find($hostinfo->user_id)->name}}</a></td>
+                                <td><a href="/admin/vhost/user/{{$hostinfo->user_id}}">{{\App\User::find($hostinfo->user_id)->name}}</a></td>
                                 <td>{{$hostinfo->host_name}}</td>
                                 <td><a href="/admin/order/{{$hostinfo->order_no}}">{{$hostinfo->order_no}}</td>
                                 <td>{{$hostinfo->price}}</td>

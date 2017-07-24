@@ -47,7 +47,7 @@ class OrderController extends Controller
         // 从数据库获取价格
         $good = Good::whereRaw("model='".$request->input('model')."'")->get();
         $date = Carbon::parse('+1 year')->toDateString();
-        $action = array_merge(['price' => $good[0]->price,'end_at' => $date],$input);
+        $action = array_merge(['price' => $good[0]->price,'end_at' => $date, 'user_id' => Auth::user()->id],$input);
         //dd($request->input('no'));
         Order::create($action);
         $cur_order = Order::whereRaw("no='".$request->input('no')."'")->get();

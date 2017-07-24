@@ -2,14 +2,14 @@
 
     <!-- menu item -->
     <li class="menu-item">
-        <a href="/auth/home/{{Auth::User()->id}}">
+        <a href="/home">
             {{Auth::User()->name}} <small><small>UID：{{Auth::User()->id}}</small></small>
         </a>
-        <a href="/auth/home/{{Auth::User()->id}}">
+        <a href="/home">
             <small>Mail：{{Auth::User()->email}}</small>
         </a>
 
-        <a href="/auth/home/{{Auth::User()->id}}">
+        <a href="/home">
             <small>QQ：{{Auth::User()->qq}}</small>
         </a>
 

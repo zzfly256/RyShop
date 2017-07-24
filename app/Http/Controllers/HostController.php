@@ -19,14 +19,14 @@ class HostController extends Controller
      */
     public function index()
     {
-        $hosts = Host::all();
+        $hosts = Host::latest()->get();
         return view("admin.host_list",compact("hosts"));
     }
 
     public function show_mine()
     {
         if (Auth::user()) {
-            $hosts = Auth::user()->host;
+            $hosts = Auth::user()->host()->orderBy('created_at', 'desc')->get();
             return view("my_host", compact('hosts'));
         } else {
             return view("my_host");

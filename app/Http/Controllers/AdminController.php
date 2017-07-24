@@ -32,7 +32,7 @@ class AdminController extends Controller
 
     public function orders_index()
     {
-        $order = Order::all();
+        $order = Order::latest()->get();
         return view("admin.orders_index",compact('order'));
     }
 

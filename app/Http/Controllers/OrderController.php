@@ -112,7 +112,7 @@ class OrderController extends Controller
     {
         if(Auth::user())
         {
-            $order = Auth::user()->order;
+            $order = Auth::user()->order()->orderBy('created_at', 'desc')->get();
             return view("my_order",compact('order'));
         }
         else

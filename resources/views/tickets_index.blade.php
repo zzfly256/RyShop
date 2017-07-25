@@ -1,5 +1,5 @@
 @section('title')
-    我的订单
+    我的工单
 @stop
 @include('header')
 @include('nav')
@@ -32,7 +32,7 @@
                             @foreach($tic as $ticinfo)
                                 <tr>
                                     <td><a href="/my_ticket/{{$ticinfo->id}}">{{$ticinfo->title}}</a></td>
-                                    <td><?php echo $ticinfo->updated_at->toDateString();?></td>
+                                    <td><?php echo $ticinfo->created_at->toDateString();?></td>
                                     <td>
                                         @if($ticinfo->valid=="1")
                                             <div class="inline" style="color: #4CAF50">有效</div>
@@ -56,9 +56,9 @@
                         </div>
                         @endif
                         <div class="host-tips toast" @if(Auth::user()->ticket->count()) style="margin-top:10px;" @endif>
-                            温馨提示：若您在使用我们的主机产品过程中，有任何的疑问或者需要提供有关于我们产品的帮助，
+                            温馨提示：若您在使用我们的主机产品过程中，有任何的疑问或需要提供我们产品相关的帮助，
                             您可以发送工单并详细描述您的问题，管理员将会在24小时内作出回复。若您的问题在我们答复之后已经
-                            得到解决，您可以自行关闭工单，或一段时间无提问后管理员也会将其关闭。祝您使用愉快！
+                            得到解决，您可以自行关闭工单，或一段时间无提问后管理员也会将其关闭(或删除)。祝您使用愉快！
                         </div>
 
                 </div>

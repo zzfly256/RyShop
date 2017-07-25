@@ -41,5 +41,8 @@
         <a href="/admin/order">
             <i class="icon icon-link"></i> 订单列表
         </a>
+        <a href="/admin/tickets">
+            <i class="icon icon-message"></i> 工单管理
+        </a>
     </li>
 </ul>

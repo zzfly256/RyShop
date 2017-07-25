@@ -38,11 +38,18 @@
     <!-- menu item -->
     <li class="menu-item">
         <a href="/home">
-            <i class="icon icon-link"></i> 个人资料
+            <i class="icon icon-people"></i> 个人资料
         </a>
         <a href="/home/edit">
             <i class="icon icon-link"></i> 修改资料
         </a>
     </li>
+    <li class="divider">
+    <li class="menu-item">
+        <a href="/my_ticket">
+            <i class="icon icon-message"></i> 工单提问
+        </a>
+    </li>
+
 
 </ul>

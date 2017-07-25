@@ -125,7 +125,7 @@ class OrderController extends Controller
     {
         if(Auth::user() and Auth::user()->level==0)
         {
-            $order = User::findOrFail($id)->order;
+            $order = User::findOrFail($id)->order()->orderBy('created_at', 'desc')->get();
             $user = User::findOrFail($id);
             return view("admin.show_user_order",compact('order'))->with("user",$user);
         }

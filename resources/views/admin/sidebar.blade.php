@@ -28,7 +28,7 @@
             <label class="label label-primary">{{App\User::all()->count()}}</label>
         </div>
         <a href="/admin/users">
-            <i class="icon icon-link"></i> 用户列表
+            <i class="icon icon-people"></i> 用户列表
         </a>
     </li>
     <!-- menu divider -->

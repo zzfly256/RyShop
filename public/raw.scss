@@ -136,3 +136,23 @@ body{
   background: #fff;
   font-size:80%;
 }
+
+.new_ticket_btn{
+  margin-left: 10px;
+  float: right;
+}
+
+.ticket-panel{
+  background: #fff;
+  margin-top:10px;
+  & a{
+    color:#8689a0;
+  }
+}
+.ticket-content{
+  line-height:2;
+}
+
+.ticket-tail{
+  color: #aaaaaa;
+}

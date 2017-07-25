@@ -49,3 +49,11 @@ get('/my_host','HostController@show_mine');
 get('/my_host/panel/{panel}','HostController@show_panel');
 post('/admin/vhost/{id}','HostController@change_status');
 delete('admin/vhost/{id}','HostController@delete_host');
+
+// 工单系统
+get('/my_ticket','TicketController@front_index');
+get('/my_ticket/new','TicketController@create');
+post('/my_ticket/new','TicketController@store');
+get('/my_ticket/{id}','TicketController@show');
+get('/my_ticket/{id}/reply','TicketController@front_reply');
+patch('/my_ticket/{id}/reply','TicketController@update');

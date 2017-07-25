@@ -584,7 +584,7 @@ abbr[title] {
   padding: 1.5rem 1rem;
 }
 .table th {
-  border-bottom: .1rem solid #727e96;
+  border-bottom: .1rem solid rgba(114, 126, 150, 0.42);
   padding: 1.5rem 1rem;
 }
 .btn {

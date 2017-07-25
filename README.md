@@ -1,5 +1,5 @@
 # RyShop 虚拟主机销售系统(在线商城程序)
-Updated at 7/21/2017
+Updated at 7/24/2017
 
 ## 模块设计
 ### 物品模块
@@ -18,6 +18,11 @@ Updated at 7/21/2017
 - 用户编辑
 - 用户删除
 
+### 工单模块
+- 发送工单
+- 回复工单
+- 删除工单
+
 ## 界面部分
 ### 用户层面
 - 注册/登录
@@ -25,6 +30,7 @@ Updated at 7/21/2017
 - 购买商品( 填写信息->付款->通过API自动开通 )
 - 我的主机
 - 我的订单
+- 工单提问
 
 ### 管理员层面
 #### 物品(主机)管理
@@ -40,6 +46,11 @@ Updated at 7/21/2017
 - 用户编辑
 - 用户删除
 
+#### 工单管理
+- 查看工单
+- 发送工单
+- 删除工单
+
 ## 数据表字段
 ### 用户部分
 - id increments
@@ -47,7 +58,7 @@ Updated at 7/21/2017
 - email string
 - password string
 - qq string
-- level interger
+- level integer
 - timestamps
 
 ### 商品部分
@@ -56,6 +67,7 @@ Updated at 7/21/2017
 - model string
 - price double
 - description longtext
+- details longtext
 - panel string
 - timestamps
 
@@ -63,7 +75,7 @@ Updated at 7/21/2017
 - id increments
 - no string
 - model string
-- user_id increments
+- user_id integer
 - price double
 - end_at string
 - payout boolean
@@ -73,10 +85,18 @@ Updated at 7/21/2017
 - id increments
 - order_no string
 - model string
-- user_id increments
+- user_id integer
 - price double
 - end_at string
 - host_name
 - host_pass
 - host_panel
 - timestamps
+
+### 工单系统部分
+- id increments
+- content longtext
+- user_id integer
+- reply integer
+- valid integer
+- timestamp

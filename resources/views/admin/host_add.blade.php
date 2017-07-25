@@ -31,7 +31,7 @@
                     {!! Form::submit('添加',["class"=>"btn btn-default"]) !!}
                 </div>
                 {!!  Form::close() !!}
-            </div>
+                </div>
             </div>
         </div>
     </div>

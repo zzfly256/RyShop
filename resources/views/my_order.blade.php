@@ -12,7 +12,7 @@
                 @include("sidebar")
             </div>
             <div class="column col-9 col-md-12">
-                <div class="order-item-title">
+                <div class="item-title">
                    您的订单共 <b>{{Auth::user()->order->count()}}</b> 个，其中<b> <?php echo Auth::user()->order->count()-Auth::user()->order->where("payout","=",'0')->count();?></b> 个已支付
                 </div>
                 @foreach($order as $orderinfo)

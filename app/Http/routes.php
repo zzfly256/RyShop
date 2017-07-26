@@ -25,13 +25,13 @@ get('/admin/host','AdminController@host_index');
 get('/admin/host/add','GoodController@create');
 post('/admin/host/add','GoodController@store');
 get('/admin/host/{id}/edit','GoodController@edit');
-delete('admin/host/{id}','GoodController@destroy');
-patch('admin/host/{id}','GoodController@update');
+delete('/admin/host/{id}','GoodController@destroy');
+patch('/admin/host/{id}','GoodController@update');
 // 用户部分
 get('/admin/users','AdminController@users_index');
-delete('admin/users/{id}','AdminController@user_destroy');
-get('admin/users/{id}/edit','AdminController@user_edit');
-patch('admin/users/{id}','AdminController@user_update');
+delete('/admin/users/{id}','AdminController@user_destroy');
+get('/admin/users/{id}/edit','AdminController@user_edit');
+patch('/admin/users/{id}','AdminController@user_update');
 
 // 订单模块
 post('/order','OrderController@store');
@@ -43,7 +43,7 @@ get('/admin/order/unpaid','OrderController@show_unpaid');
 get('/admin/order/{no}','OrderController@order_show');
 get('/order/{no}','OrderController@order_front_show');
 get('/admin/order/user/{id}','OrderController@show_user');
-
+delete('/admin/order/{no}','OrderController@destroy');
 
 //虚拟主机部分
 get('/admin/vhost','HostController@index');

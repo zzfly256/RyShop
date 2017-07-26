@@ -11,7 +11,7 @@
                 @include("admin.sidebar")
             </div>
             <div class="column col-9 col-md-12">
-                <div class="order-item-title">
+                <div class="item-title">
                     用户名：<a href="/admin/users/{{$user->id}}/edit" style="color:#aaa">{{$user->name}}</a>，订单共 <b>{{$user->order->count()}}</b> 个，其中<b> <?php echo $user->order->count()-$user->order->where("payout","=",'0')->count();?></b> 个已支付
                 </div>
                @foreach($order as $orderinfo)

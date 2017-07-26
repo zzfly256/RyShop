@@ -12,7 +12,7 @@
                     @include("sidebar")
                 </div>
                 <div class="column col-9 col-md-12">
-                    <div class="order-item-title">
+                    <div class="item-title">
                         您购买的虚拟主机共 <b>{{Auth::user()->host->count()}}</b> 个，其中<b> <?php echo Auth::user()->host->count()-Auth::user()->host->where("valid","=",0)->count();?></b> 个已开通
                     </div>
                     @foreach($hosts as $hostinfo)

@@ -26,7 +26,7 @@
                             <th>用户</th>
                             <th>支付状态</th>
                             <th>截止日</th>
-                            <th>详情</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -38,7 +38,12 @@
                                 <td><a href="/admin/order/user/{{$orderinfo->user_id}}">{{$orderinfo->user->name}}</a></td>
                                 <td><?php if($orderinfo->payout==1){echo '<label class="label label-success">成功</label>';}else{echo '<label class="label label-warning">未支付</label>';}?></td>
                                 <td>{{$orderinfo->end_at}}</td>
-                                <td><a href="/admin/order/{{$orderinfo->no}}" class="btn">详情</a></td>
+
+                                <td>
+                                    {!! Form::open(['url'=>'/admin/order/'.$orderinfo->id,'method'=>'DELETE']) !!}
+                                    {!! Form::submit('删除',["class"=>"btn btn-delete"]) !!}
+                                    {!! Form::close() !!}
+                                </td>
                             </tr>
                         @endforeach
 

@@ -111,7 +111,13 @@ class OrderController extends Controller
     public function show_paid()
     {
         $order = Order::whereRaw("payout='1'")->get();
-        return view("admin.order_paid",compact('order'));
+        return view("admin.orders_index",compact('order'));
+    }
+
+    public function show_unpaid()
+    {
+        $order = Order::whereRaw("payout='0'")->get();
+        return view("admin.order_unpaid",compact('order'));
     }
 
 
@@ -169,6 +175,8 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Order::findOrFail($id);
+        $order->delete();
+        return redirect('/admin/order/unpaid');
     }
 }

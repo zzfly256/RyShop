@@ -108,6 +108,13 @@ class OrderController extends Controller
         return view("order_show",compact('order_get'));
     }
 
+    public function show_paid()
+    {
+        $order = Order::whereRaw("payout='1'")->get();
+        return view("admin.order_paid",compact('order'));
+    }
+
+
     public function show_mine()
     {
         if(Auth::user())

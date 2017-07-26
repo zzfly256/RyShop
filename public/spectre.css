@@ -2025,8 +2025,6 @@ code {
 }
 .card {
   background: #fff;
-  border: .1rem solid rgba(227, 227, 227, 0.89);
-  border-radius: .2rem;
   display: block;
   overflow: auto;
 }

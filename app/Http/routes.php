@@ -38,9 +38,12 @@ post('/order','OrderController@store');
 post('/order/result','OrderController@result');
 get('/my_order','OrderController@show_mine');
 get('/admin/order','AdminController@orders_index');
+get('/admin/order/paid','OrderController@show_paid');
+get('/admin/order/unpaid','OrderController@show_unpaid');
 get('/admin/order/{no}','OrderController@order_show');
 get('/order/{no}','OrderController@order_front_show');
 get('/admin/order/user/{id}','OrderController@show_user');
+
 
 //虚拟主机部分
 get('/admin/vhost','HostController@index');

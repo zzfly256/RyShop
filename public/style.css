@@ -106,18 +106,18 @@ body {
   .order-item .model-label {
     margin-left: 10px; }
 
-.order-item-title {
+.item-title {
   padding: 1rem 1.2rem;
   background: #fff;
-  font-size: 80%; }
+  font-size: 80%;
+  border-bottom: 1px solid #eee; }
 
 .new_ticket_btn {
   margin-left: 10px;
   float: right; }
 
 .ticket-panel {
-  background: #fff;
-  margin-top: 10px; }
+  background: #fff; }
   .ticket-panel a {
     color: #8689a0; }
 

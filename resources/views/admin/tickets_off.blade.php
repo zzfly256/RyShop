@@ -12,7 +12,7 @@
                 @include("admin.sidebar")
             </div>
             <div class="column col-9 col-md-12">
-                <div class="order-item-title">
+                <div class="item-title">
                     工单提问共 <b>{{\App\Ticket::all()->count()}}</b> 个
                     <a href="/admin/tickets/off" class="new_ticket_btn"> 已关闭（<?php echo \App\Ticket::all()->where("valid","=",'0')->count();?>）</a>
                     <a href="/admin/tickets/on" class="new_ticket_btn"> 有效的（<?php echo \App\Ticket::all()->count()-\App\Ticket::all()->where("valid","=",'0')->count();?>）</a>

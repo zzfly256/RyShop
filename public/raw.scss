@@ -131,10 +131,11 @@ body{
   }
 }
 
-.order-item-title{
+.item-title{
   padding:1rem 1.2rem;
   background: #fff;
   font-size:80%;
+  border-bottom: 1px solid #eee;
 }
 
 .new_ticket_btn{
@@ -144,7 +145,6 @@ body{
 
 .ticket-panel{
   background: #fff;
-  margin-top:10px;
   & a{
     color:#8689a0;
   }

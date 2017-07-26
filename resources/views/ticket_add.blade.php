@@ -12,8 +12,8 @@
                     @include("sidebar")
                 </div>
                 <div class="column col-9 col-md-12">
-                    <div class="order-item-title">
-                        您的工单提问共 <b>{{Auth::user()->ticket->count()}}</b> 个，其中<b> <?php echo Auth::user()->ticket->count()-Auth::user()->ticket->where("valid","=",'0')->count();?></b> 个为有效的
+                    <div class="item-title">
+                        您的工单提问共 <b>{{Auth::user()->ticket->count()}}</b> 个
                         <a href="/my_ticket/new" class="new_ticket_btn"> 提交新工单</a>
                     </div>
 

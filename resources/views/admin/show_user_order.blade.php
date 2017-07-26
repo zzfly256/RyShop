@@ -12,7 +12,10 @@
             </div>
             <div class="column col-9 col-md-12">
                 <div class="item-title">
-                    用户名：<a href="/admin/users/{{$user->id}}/edit" style="color:#aaa">{{$user->name}}</a>，订单共 <b>{{$user->order->count()}}</b> 个，其中<b> <?php echo $user->order->count()-$user->order->where("payout","=",'0')->count();?></b> 个已支付
+                    用户名：<a href="/admin/users/{{$user->id}}/edit" style="color:#aaa">{{$user->name}}</a>，订单共 <b>{{$user->order->count()}}</b> 个
+                    <a href="/admin/order/user/{{$user->id}}/unpaid" class="new_ticket_btn"> 未支付（{{\App\User::find($user->id)->order()->whereRaw("payout='0'")->count()}}）</a>
+                    <a href="/admin/order/user/{{$user->id}}/paid" class="new_ticket_btn"> 已支付（{{\App\User::find($user->id)->order()->whereRaw("payout='1'")->count()}}）</a>
+
                 </div>
                @foreach($order as $orderinfo)
                    <div class="order-item">

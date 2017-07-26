@@ -29,13 +29,25 @@ class TicketController extends Controller
         return view("admin.tickets_index",compact('tic'));
     }
 
-    public function on_show()
+    public function front_open()
+    {
+        $tic = Auth::user()->ticket()->whereRaw("valid='1'")->orderBy("created_at","desc")->get();
+        return view("tickets_index",compact('tic'));
+    }
+
+    public function front_closed()
+    {
+        $tic = Auth::user()->ticket()->whereRaw("valid='0'")->orderBy("created_at","desc")->get();
+        return view("tickets_index",compact('tic'));
+    }
+
+    public function admin_open()
     {
         $tic = Ticket::whereRaw("valid=1")->orderBy("created_at","desc")->get();
         return view("admin.tickets_on",compact('tic'));
     }
 
-    public function off_show()
+    public function admin_closed()
     {
         $tic = Ticket::whereRaw("valid=0")->orderBy("created_at","desc")->get();
         return view("admin.tickets_off",compact('tic'));
@@ -88,6 +100,17 @@ class TicketController extends Controller
     public function user_show($id)
     {
         $tic = User::findOrFail($id)->ticket()->orderBy("created_at","desc")->get();
+        return view("admin.show_user_ticket",compact('tic'))->with("user",User::findOrFail($id));
+    }
+
+    public function user_open($id)
+    {
+        $tic = User::findOrFail($id)->ticket()->whereRaw("valid='1'")->orderBy("created_at","desc")->get();
+        return view("admin.show_user_ticket",compact('tic'))->with("user",User::findOrFail($id));
+    }
+    public function user_closed($id)
+    {
+        $tic = User::findOrFail($id)->ticket()->whereRaw("valid='0'")->orderBy("created_at","desc")->get();
         return view("admin.show_user_ticket",compact('tic'))->with("user",User::findOrFail($id));
     }
 

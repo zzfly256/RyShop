@@ -13,8 +13,11 @@
                 </div>
                 <div class="column col-9 col-md-12">
                     <div class="item-title">
-                        您的工单提问共 <b>{{Auth::user()->ticket()->count()}}</b> 个，其中<b> <?php echo Auth::user()->ticket()->count()-Auth::user()->ticket()->where("valid","=",'0')->count();?></b> 个为有效的
+                        您的工单提问共 <b>{{Auth::user()->ticket()->count()}}</b> 个
                         <a href="/my_ticket/new" class="new_ticket_btn"> 提交新工单</a>
+                        <a href="/my_ticket/closed" class="new_ticket_btn"> 关闭的（{{Auth::user()->ticket()->whereRaw("valid='0'")->count()}}）</a>
+                        <a href="/my_ticket/open" class="new_ticket_btn"> 有效的（{{Auth::user()->ticket()->whereRaw("valid='1'")->count()}}）</a>
+
                     </div>
 
                         @if(Auth::user()->ticket->count())
@@ -23,17 +26,17 @@
                             <thead>
                             <tr>
                                 <th>标题</th>
-                                <th>时间</th>
-                                <th>状态</th>
-                                <th>回复情况</th>
+                                <th style="text-align: center">时间</th>
+                                <th style="text-align: center">状态</th>
+                                <th style="text-align: center">回复情况</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($tic as $ticinfo)
                                 <tr>
                                     <td><a href="/my_ticket/{{$ticinfo->id}}">{{$ticinfo->title}}</a></td>
-                                    <td><?php echo $ticinfo->created_at->toDateString();?></td>
-                                    <td>
+                                    <td style="text-align: center"><?php echo $ticinfo->created_at->toDateString();?></td>
+                                    <td style="text-align: center">
                                         @if($ticinfo->valid=="1")
                                             <div class="inline" style="color: #4CAF50">有效</div>
                                         @else

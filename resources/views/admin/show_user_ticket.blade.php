@@ -12,8 +12,11 @@
                     @include("admin.sidebar")
                 </div>
                 <div class="column col-9 col-md-12">
-                    <div class="order-item-title">
-                        用户名：<a href="/admin/users/{{$user->id}}/edit" style="color:#aaa">{{$user->name}}</a>，工单提问共 <b>{{\App\User::findOrFail($user->id)->ticket()->count()}}</b> 个，其中<b> <?php echo \App\User::findOrFail($user->id)->ticket()->count()-\App\User::findOrFail($user->id)->ticket()->where("valid","=",'0')->count();?></b> 个为有效的
+                    <div class="item-title">
+                        用户名：<a href="/admin/users/{{$user->id}}/edit" style="color:#aaa">{{$user->name}}</a>，工单提问共 <b>{{\App\User::findOrFail($user->id)->ticket()->count()}}</b> 个
+                        <a href="/admin/tickets/user/{{$user->id}}/closed" class="new_ticket_btn"> 关闭的（{{\App\User::find($user->id)->ticket()->whereRaw("valid='0'")->count()}}）</a>
+                        <a href="/admin/tickets/user/{{$user->id}}/open" class="new_ticket_btn"> 有效的（{{\App\User::find($user->id)->ticket()->whereRaw("valid='1'")->count()}}）</a>
+
                     </div>
 
                     @if(Auth::user()->ticket->count())

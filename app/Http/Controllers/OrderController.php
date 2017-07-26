@@ -114,10 +114,24 @@ class OrderController extends Controller
         return view("admin.orders_index",compact('order'));
     }
 
+    public function admin_user_paid($id)
+    {
+        $user = User::findOrFail($id);
+        $order = $user->order()->whereRaw("payout='1'")->get();
+        return view("admin.show_user_order",compact('order'))->with("user",$user);
+    }
+
     public function show_unpaid()
     {
         $order = Order::whereRaw("payout='0'")->get();
         return view("admin.order_unpaid",compact('order'));
+    }
+
+    public function admin_user_unpaid($id)
+    {
+        $user = User::findOrFail($id);
+        $order = $user->order()->whereRaw("payout='0'")->get();
+        return view("admin.show_user_order",compact('order'))->with("user",$user);
     }
 
 

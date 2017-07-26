@@ -43,6 +43,8 @@ get('/admin/order/unpaid','OrderController@show_unpaid');
 get('/admin/order/{no}','OrderController@order_show');
 get('/order/{no}','OrderController@order_front_show');
 get('/admin/order/user/{id}','OrderController@show_user');
+get('/admin/order/user/{id}/paid','OrderController@admin_user_paid');
+get('/admin/order/user/{id}/unpaid','OrderController@admin_user_unpaid');
 delete('/admin/order/{no}','OrderController@destroy');
 
 //虚拟主机部分
@@ -55,16 +57,20 @@ delete('admin/vhost/{id}','HostController@delete_host');
 
 // 工单系统
 get('/my_ticket','TicketController@front_index');
+get('/my_ticket/open','TicketController@front_open');
+get('/my_ticket/closed','TicketController@front_closed');
 get('/my_ticket/new','TicketController@create');
 post('/my_ticket/new','TicketController@store');
 get('/my_ticket/{id}','TicketController@front_show');
 get('/my_ticket/{id}/reply','TicketController@front_reply');
 patch('/my_ticket/{id}/reply','TicketController@update');
 get('/admin/tickets','TicketController@admin_index');
-get('/admin/tickets/on','TicketController@on_show');
-get('/admin/tickets/off','TicketController@off_show');
+get('/admin/tickets/open','TicketController@admin_open');
+get('/admin/tickets/closed','TicketController@admin_closed');
 get('/admin/tickets/{id}','TicketController@admin_show');
 patch('/admin/tickets/{id}','TicketController@admin_turn_off');
 delete('/admin/tickets/{id}','TicketController@destroy');
 patch('/my_ticket/{id}','TicketController@user_turn_off');
 get('/admin/tickets/user/{id}','TicketController@user_show');
+get('/admin/tickets/user/{id}/open','TicketController@user_open');
+get('/admin/tickets/user/{id}/closed','TicketController@user_closed');

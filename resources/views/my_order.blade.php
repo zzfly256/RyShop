@@ -13,7 +13,9 @@
             </div>
             <div class="column col-9 col-md-12">
                 <div class="item-title">
-                   您的订单共 <b>{{Auth::user()->order->count()}}</b> 个，其中<b> <?php echo Auth::user()->order->count()-Auth::user()->order->where("payout","=",'0')->count();?></b> 个已支付
+                   您的订单共 <b>{{Auth::user()->order->count()}}</b> 个
+                    <a href="/my_order/unpaid" class="new_ticket_btn"> 未支付（{{Auth::user()->order()->whereRaw("payout='0'")->count()}}）</a>
+                    <a href="/my_order/paid" class="new_ticket_btn"> 已支付（{{Auth::user()->order()->whereRaw("payout='1'")->count()}}）</a>
                 </div>
                 @foreach($order as $orderinfo)
                     <div class="order-item">

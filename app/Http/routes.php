@@ -37,6 +37,8 @@ patch('/admin/users/{id}','AdminController@user_update');
 post('/order','OrderController@store');
 post('/order/result','OrderController@result');
 get('/my_order','OrderController@show_mine');
+get('/my_order/paid','OrderController@my_paid');
+get('/my_order/unpaid','OrderController@my_unpaid');
 get('/admin/order','AdminController@orders_index');
 get('/admin/order/paid','OrderController@show_paid');
 get('/admin/order/unpaid','OrderController@show_unpaid');

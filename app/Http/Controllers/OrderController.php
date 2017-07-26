@@ -148,6 +148,34 @@ class OrderController extends Controller
         }
 
     }
+
+    public function my_paid()
+    {
+        if(Auth::user())
+        {
+            $order = Auth::user()->order()->whereRaw("payout='1'")->orderBy('created_at', 'desc')->get();
+            return view("my_order",compact('order'));
+        }
+        else
+        {
+            return view("my_order");
+        }
+
+    }
+
+    public function my_unpaid()
+    {
+        if(Auth::user())
+        {
+            $order = Auth::user()->order()->whereRaw("payout='0'")->orderBy('created_at', 'desc')->get();
+            return view("my_order",compact('order'));
+        }
+        else
+        {
+            return view("my_order");
+        }
+
+    }
     public function show_user($id)
     {
         if(Auth::user() and Auth::user()->level==0)

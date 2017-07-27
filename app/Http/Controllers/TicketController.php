@@ -120,6 +120,11 @@ class TicketController extends Controller
         return view("ticket_reply",compact('tic'));
     }
 
+    public function admin_reply($id)
+    {
+        $tic = Ticket::findOrFail($id);
+        return view("admin.ticket_reply",compact('tic'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -138,7 +143,7 @@ class TicketController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function user_update(Request $request, $id)
     {
         $tic=Ticket::findOrFail($id);
         $input = $request->all();
@@ -149,7 +154,21 @@ class TicketController extends Controller
         $action = array_merge(["reply"=>Auth::user()->id],$input);
         //dd($action);
         $tic->update($action);
-        return redirect("/my_ticket/".$id);
+        return redirect('/my_ticket/'.$id);
+    }
+
+    public function admin_update(Request $request, $id)
+    {
+        $tic=Ticket::findOrFail($id);
+        $input = $request->all();
+        if(empty(trim($input["content"]))){
+            return redirect("/my_ticket/".$id);
+        }
+        $input["content"] = $tic->content.$request->input('content')."<br><small class='ticket-tail'>".Auth::user()->name." 发布于 ".Carbon::now()." </small><hr>";
+        $action = array_merge(["reply"=>Auth::user()->id],$input);
+        //dd($action);
+        $tic->update($action);
+        return redirect('/admin/tickets/'.$id);
     }
 
     public function admin_turn_off(Request $request, $id)

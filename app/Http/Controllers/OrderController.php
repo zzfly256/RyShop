@@ -88,6 +88,14 @@ class OrderController extends Controller
         //dd($cur_order);
     }
 
+    public function renew(Request $request)
+    {
+        $host = Host::findOrFail($request->input('id'));
+        $host["end_at"] = Carbon::parse($host["end_at"].'+1 year')->toDateString();
+        //dd($host);
+        return view('renew',compact('host'));
+    }
+
     /**
      * Display the specified resource.
      *

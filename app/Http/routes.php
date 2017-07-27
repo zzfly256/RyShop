@@ -48,6 +48,8 @@ get('/admin/order/user/{id}','OrderController@show_user');
 get('/admin/order/user/{id}/paid','OrderController@admin_user_paid');
 get('/admin/order/user/{id}/unpaid','OrderController@admin_user_unpaid');
 delete('/admin/order/{no}','OrderController@destroy');
+// 续费部分
+post('/my_host/renew','OrderController@renew');
 
 //虚拟主机部分
 get('/admin/vhost','HostController@index');
@@ -65,11 +67,13 @@ get('/my_ticket/new','TicketController@create');
 post('/my_ticket/new','TicketController@store');
 get('/my_ticket/{id}','TicketController@front_show');
 get('/my_ticket/{id}/reply','TicketController@front_reply');
-patch('/my_ticket/{id}/reply','TicketController@update');
+patch('/my_ticket/{id}/reply','TicketController@user_update');
 get('/admin/tickets','TicketController@admin_index');
 get('/admin/tickets/open','TicketController@admin_open');
 get('/admin/tickets/closed','TicketController@admin_closed');
 get('/admin/tickets/{id}','TicketController@admin_show');
+get('/admin/tickets/{id}/reply','TicketController@admin_reply');
+patch('/admin/tickets/{id}/reply','TicketController@admin_update');
 patch('/admin/tickets/{id}','TicketController@admin_turn_off');
 delete('/admin/tickets/{id}','TicketController@destroy');
 patch('/my_ticket/{id}','TicketController@user_turn_off');

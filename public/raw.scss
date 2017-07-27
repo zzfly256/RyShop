@@ -115,7 +115,7 @@ body{
   padding:1.5rem 1.2rem;
   width: 100%;
   height:auto;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #eee!important;
   line-height:2;
   & span{
     margin-left:7px;
@@ -136,6 +136,18 @@ body{
   background: #fff;
   font-size:80%;
   border-bottom: 1px solid #eee;
+}
+
+.host-btn-panel{
+  margin-top: 0px;
+  & .btn:first-child{
+    margin-left:0px;
+    color:#2196F3;
+  }
+  & .btn{
+    margin-left:-5px;
+    color:#2196F3;
+  }
 }
 
 .new_ticket_btn{

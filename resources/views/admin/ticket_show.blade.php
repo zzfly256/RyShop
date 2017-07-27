@@ -29,7 +29,7 @@
                     {!! $tic->content !!}
                     @if($tic->valid=="1")
                         <div class="input-group input-inline" style="margin-top: 10px">
-                            <a href="/my_ticket/{{$tic->id}}/reply" class="btn btn-default">回复</a>
+                            <a href="/admin/tickets/{{$tic->id}}/reply" class="btn btn-default">回复</a>
                             {!! Form::open(['url'=>'/my_ticket/'.$tic->id,'method'=>'PATCH']) !!}
                             {!! Form::hidden('valid',0) !!}
 

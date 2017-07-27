@@ -31,13 +31,19 @@
                                     <div class="inline"style="color: #FF5722">过期</div>
                                 @endif
                             </span>
-                            <span>有效期至：{{$hostinfo->end_at}}</span>
-                            <br>
+
                             <span>网站账户：<small>{{$hostinfo->host_name}}</small></span>
                             <span>默认密码：<small>{{$hostinfo->host_pass}}</small></span>
+                            <span>有效期至：<small>{{$hostinfo->end_at}}</small></span>
                             @if($hostinfo->valid==1)
                             <br>
-                            <span><a href="/my_host/panel/{{$hostinfo->host_panel}}">进入控制面板</a></span>
+                                <div class="input-group input-inline host-btn-panel">
+                                    <a class="btn btn-link" href="/my_host/panel/{{$hostinfo->host_panel}}">进入控制面板</a>
+                                    {!!  Form::open(['url'=>'/my_host/renew']) !!}
+                                        {!! Form::hidden('id',$hostinfo->id) !!}
+                                        {!! Form::submit('续费',["class"=>"btn btn-link","style"=>"display:inline"]) !!}
+                                    {!!  Form::close() !!}
+                                </div>
                             @endif
 
                         </div>

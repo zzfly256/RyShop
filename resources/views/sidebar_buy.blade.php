@@ -47,7 +47,7 @@
     @endif
 </ul>
 @if(Auth::User())
-    {!!  Form::open(['url'=>'/order/']) !!}
+    {!!  Form::open(['url'=>'/order/new']) !!}
     {!! Form::hidden('no',$order_no) !!}
     {!! Form::hidden('model',$good[0]->model) !!}
     {!! Form::submit('立即购买',["class"=>"buy-btn"]) !!}

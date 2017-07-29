@@ -34,8 +34,8 @@ get('/admin/users/{id}/edit','AdminController@user_edit');
 patch('/admin/users/{id}','AdminController@user_update');
 
 // 订单模块
-post('/order','OrderController@store');
-post('/order/result','OrderController@result');
+post('/order/new','OrderController@new_store');
+post('/order/new/result','OrderController@new_result');
 get('/my_order','OrderController@show_mine');
 get('/my_order/paid','OrderController@my_paid');
 get('/my_order/unpaid','OrderController@my_unpaid');
@@ -50,6 +50,8 @@ get('/admin/order/user/{id}/unpaid','OrderController@admin_user_unpaid');
 delete('/admin/order/{no}','OrderController@destroy');
 // 续费部分
 post('/my_host/renew','OrderController@renew');
+post('/order/renew','OrderController@renew_store');
+post('/order/renew/result','OrderController@renew_result');
 
 //虚拟主机部分
 get('/admin/vhost','HostController@index');

@@ -41,7 +41,7 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function new_store(Request $request)
     {
         $input = $request->all();
         // 从数据库获取价格
@@ -56,7 +56,7 @@ class OrderController extends Controller
         //return redirect("/admin/host");
     }
 
-    public function result(Request $request)
+    public function new_result(Request $request)
     {
         $addnum = $_POST['addnum'] ? $_POST['addnum'] : $_GET['addnum'];		//接收到的订单编号
         $uid = $_POST['uid'] ? $_POST['uid'] : $_GET['uid'];				//接收到的支付会员编号
@@ -90,10 +90,49 @@ class OrderController extends Controller
 
     public function renew(Request $request)
     {
-        $host = Host::findOrFail($request->input('id'));
+        $host = Host::findOrFail(base64_decode($request->input('id')));
         $host["end_at"] = Carbon::parse($host["end_at"].'+1 year')->toDateString();
         //dd($host);
         return view('renew',compact('host'));
+    }
+
+    public function renew_store(Request $request)
+    {
+        $input = $request->all();
+        $input['no'] = base64_decode($request->input('no'));
+        $input['target'] = base64_decode($request->input('host'));
+        // 从数据库获取原主机过期时间以及价格
+        $host = Host::findOrFail(base64_decode($request->input('host')));
+        $date = Carbon::parse($host->end_at.'+1 year')->toDateString();
+        //dd($date);
+        $action = array_merge(['price' => $host->price,'end_at' => $date, 'user_id' => Auth::user()->id, 'model' => $host->model],$input);
+        //dd($action);
+        Order::create($action);
+        $cur_order = Order::whereRaw("no='".$input['no']."'")->get();
+        Order::renew($host->price,$cur_order[0]->id,$input['no']);
+        //return redirect("/admin/host");
+    }
+
+    public function renew_result(Request $request)
+    {
+        $addnum = $_POST['addnum'] ? $_POST['addnum'] : $_GET['addnum'];		//接收到的订单编号
+        $uid = $_POST['uid'] ? $_POST['uid'] : $_GET['uid'];				//接收到的支付会员编号
+        $total = $_POST['total'] ? $_POST['total'] : $_GET['total'];			//接收到的支付金额
+        $apikey = $_POST['apikey'] ? $_POST['apikey'] : $_GET['apikey'];		//接收到的验证加密字串
+        $cur_order = Order::findOrFail($uid);
+        //dd($cur_good[0]->price);
+        if(Order::is_succeed($apikey,$total,$cur_order))
+        {
+            $cur_order->update(['payout'=>'1']);
+            $host = Host::findOrFail($cur_order->target);
+            $host_info = ['order_no'=>$cur_order->no, 'end_at'=>$cur_order->end_at];
+            $host->update($host_info);
+            return redirect('/my_host');
+        }
+        else{
+            echo "你TM想骗我主机？";
+        }
+        //dd($cur_order);
     }
 
     /**

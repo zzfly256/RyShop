@@ -48,6 +48,10 @@
                             <td><?php if($order_get->payout==1){echo '<label class="label label-success">成功</label>';}else{echo '<label class="label label-warning">未支付</label>';}?></td>
                         </tr>
                         <tr>
+                            <td>账单类型</td>
+                            <td><?php if($order_get->target==0){echo '购入';}else{echo '续费';}?></td>
+                        </tr>
+                        <tr>
                             <td>主机型号</td>
                             <td>{{$order_get->model}}</td>
                         </tr>

@@ -26,7 +26,10 @@
             <a><small>新订单号：<?php $order_no = date("ymd").rand(1000000,9999999);echo $order_no;?></small></a>
             <a><small>网站账户：{{$host->host_name}}</small></a>
             <a>
-                <small>有效期至：{{$host->end_at}}</small>
+                <small>原有效期：{{\Carbon\Carbon::parse($host->end_at.'- 1 year')->toDateString()}}</small>
+            </a>
+            <a>
+                <small>新有效期：{{$host->end_at}}</small>
             </a>
             <a>
                 <big><big>{{$host->price}}</big></big> 元
@@ -49,9 +52,9 @@
     @endif
 </ul>
 @if(Auth::User())
-    {!!  Form::open(['url'=>'/order/']) !!}
-    {!! Form::hidden('no',$order_no) !!}
-    {!! Form::hidden('model',$host->model) !!}
+    {!!  Form::open(['url'=>'/order/renew']) !!}
+    {!! Form::hidden('no',base64_encode($order_no)) !!}
+    {!! Form::hidden('host',base64_encode($host->id)) !!}
     {!! Form::submit('立即续费',["class"=>"buy-btn"]) !!}
     {!!  Form::close() !!}
 @endif

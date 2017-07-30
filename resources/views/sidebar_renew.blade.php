@@ -21,7 +21,7 @@
         </li>
         <!-- menu item -->
         <li class="menu-item">
-            <a><?php echo \App\Good::whereRaw("model='".$host->model."'")->first()->name;?> <small>{{$host->model}}</small></a>
+            <a><?php $good_name = \App\Good::whereRaw("model='".$host->model."'")->get(); echo $good_name[0]->name ?? "已下架";?> <small>{{$host->model}}</small></a>
             <a><small>原订单号：{{$host->order_no}}</small></a>
             <a><small>新订单号：<?php $order_no = date("ymd").rand(1000000,9999999);echo $order_no;?></small></a>
             <a><small>网站账户：{{$host->host_name}}</small></a>

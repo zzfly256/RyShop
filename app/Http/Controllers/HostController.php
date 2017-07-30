@@ -64,6 +64,9 @@ class HostController extends Controller
             {
                 $host->update($request->all());
                 return redirect("/admin/vhost");
+            }else
+            {
+                dd($host->host_panel."主机所在服务器通信故障。");
             }
 
         }
@@ -73,12 +76,12 @@ class HostController extends Controller
             {
                 $host->update($request->all());
                 return redirect("/admin/vhost");
+            }else
+            {
+                dd($host->host_panel."主机所在服务器通信故障。");
             }
         }
-        else
-        {
-            dd($host->host_panel."主机所在服务器通信故障。");
-        }
+
 
     }
 

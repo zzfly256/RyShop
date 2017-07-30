@@ -25,7 +25,7 @@
                     {!! Form::label('详细页描述（支持HTML）',null,["class"=>"form-label"]) !!}
                     {!! Form::textarea('details',null,["class"=>"form-input"]) !!}
                     {!! Form::label('对接模块',null,["class"=>"form-label"]) !!}
-                    {!! Form::select('panel', ['ep1'=>'EasyPanel 1'],"ep1",["class"=>"form-input"]) !!}
+                    {!! Form::text('panel',null,["class"=>"form-input"]) !!}
                 </div>
                 <div class="form-group" style="margin-top: 20px;">
                     {!! Form::submit('添加',["class"=>"btn btn-default"]) !!}

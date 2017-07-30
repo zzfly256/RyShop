@@ -30,7 +30,7 @@
                     {!! Form::textarea('details',$good->details,["class"=>"form-input"]) !!}
 
                     {!! Form::label('对接模块',null,["class"=>"form-label"]) !!}
-                    {!! Form::select('panel', ['ep1'=>'EasyPanel 1'],"ep1",["class"=>"form-input"]) !!}
+                    {!! Form::text('panel',$good->panel,["class"=>"form-input"]) !!}
 
                     {!! Form::submit('保存',["class"=>"btn","style"=>"margin-top:10px"]) !!}
                     {!!  Form::close() !!}

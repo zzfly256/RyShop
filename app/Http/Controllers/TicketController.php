@@ -26,6 +26,7 @@ class TicketController extends Controller
     public function admin_index()
     {
         $tic = Ticket::orderBy("created_at","desc")->get();
+        //dd($tic);
         return view("admin.tickets_index",compact('tic'));
     }
 

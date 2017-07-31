@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\User;
 use App\Good;
 use App\Order;
+use App\Setings;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -134,5 +135,29 @@ class AdminController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         return redirect('/admin/users');
+    }
+
+    public function install()
+    {
+        if(Setings::all()->count()==0)
+        {
+            return view('admin.install');
+        }
+        return redirect('/');
+    }
+
+    public function initial(Request $request)
+    {
+        if(Setings::all()->count()==0)
+        {
+            $user = $request->all();
+            $user["password"] = bcrypt($user["password"]);
+            $user["level"] = 0;
+            //dd($user);
+            User::create($user);
+            Setings::install($request->input('site'));
+            return redirect('/auth/login');
+        }
+        return redirect('/');
     }
 }

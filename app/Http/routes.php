@@ -20,6 +20,8 @@ patch('/home','AdminController@user_front_update');
 
 // 管理员面板
 get('/admin','AdminController@host_index');
+get('/install','AdminController@install');
+post('/install','AdminController@initial');
 // 主机（母机）部分
 get('/admin/host','AdminController@host_index');
 get('/admin/host/add','GoodController@create');

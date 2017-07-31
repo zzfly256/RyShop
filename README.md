@@ -1,5 +1,5 @@
 # RyShop 虚拟主机销售系统(在线商城程序)
-Updated at 7/30/2017
+Updated at 7/31/2017
 
 ## 模块设计
 ### 物品模块
@@ -71,6 +71,7 @@ Updated at 7/30/2017
 - 主页 提示语
 - 主机详情 提示语
 - 工单页面 提示语
+- 底部版权 提示语
 
 ## 数据表字段
 ### 用户部分
@@ -121,3 +122,8 @@ Updated at 7/30/2017
 - reply integer
 - valid integer
 - timestamp
+
+### 设置部分
+- id increments
+- name string
+- value longtext

@@ -4,7 +4,7 @@
 @include('header')
 <body style="background: rgba(241, 241, 241, 0.73);">
     <div class="card login-panel">
-        <h4>登录 <small class="label"><small>RyShop</small></small></h4>
+        <h4>登录 <small class="label"><small>{{\App\Setings::whereRaw("name='siteName'")->first()->value}}</small></small></h4>
         {!!  Form::open(['url'=>'/auth/login']) !!}
         <div class="form-group">
             {!! Form::label('邮箱',null,["class"=>"form-label"]) !!}

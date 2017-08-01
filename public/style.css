@@ -136,4 +136,10 @@ body {
 .ticket-tail {
   color: #aaaaaa; }
 
+.footer {
+  text-align: center;
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px; }
+
 /*# sourceMappingURL=style.css.map */

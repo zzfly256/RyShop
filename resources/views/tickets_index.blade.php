@@ -59,9 +59,7 @@
                         </div>
                         @endif
                         <div class="host-tips toast" @if(Auth::user()->ticket->count()) style="margin-top:10px;" @endif>
-                            温馨提示：若您在使用我们的主机产品过程中，有任何的疑问或需要提供我们产品相关的帮助，
-                            您可以发送工单并详细描述您的问题，管理员将会在24小时内作出回复。若您的问题在我们答复之后已经
-                            得到解决，您可以自行关闭工单，或一段时间无提问后管理员也会将其关闭(或删除)。祝您使用愉快！
+                            {!! \App\Setings::whereRaw("name='ticket_text'")->first()->value !!}
                         </div>
 
                 </div>

@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="host-tips toast">
-                    温馨提示：请仔细核对本页信息是否正确，并且阅读 <a href="">服务条款</a> 哦！购买成功则代表您同意本站服务条款。
+                    {!! \App\Setings::whereRaw("name='good_text'")->first()->value !!}
                 </div>
             </div>
 

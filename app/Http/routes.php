@@ -34,6 +34,10 @@ get('/admin/users','AdminController@users_index');
 delete('/admin/users/{id}','AdminController@user_destroy');
 get('/admin/users/{id}/edit','AdminController@user_edit');
 patch('/admin/users/{id}','AdminController@user_update');
+// 设置部分
+get('/admin/setings/general','AdminController@setings_general');
+get('/admin/setings/server','AdminController@setings_server');
+patch('/admin/setings/{id}','AdminController@setings_update');
 
 // 订单模块
 post('/order/new','OrderController@new_store');

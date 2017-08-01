@@ -7,7 +7,6 @@
                 @if(Auth::user())
                 <a href="/my_host" class="btn btn-link">我的主机</a>
                 <a href="/my_order" class="btn btn-link">我的订单</a>
-                    <a href="/my_ticket" class="btn btn-link">工单提问</a>
                     @if(Auth::user()->level==0)
                         <a href="/admin" class="btn btn-link">管理员面板</a>
                     @endif

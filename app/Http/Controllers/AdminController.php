@@ -160,4 +160,18 @@ class AdminController extends Controller
         }
         return redirect('/');
     }
+
+    public function setings_general()
+    {
+        $setings = Setings::all();
+        return view('admin.setings_general',compact('setings'));
+    }
+    public function setings_update(Request $request,$id)
+    {
+        $setings = Setings::find($id);
+        $input = $request->all();
+        //dd($input);
+        $setings->update($input);
+        return redirect()->back();
+    }
 }

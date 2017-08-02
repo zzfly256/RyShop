@@ -13,10 +13,14 @@ get('/auth/register','Auth\AuthController@getRegister');
 post('/auth/register','Auth\AuthController@postRegister');
 get('/auth/logout','Auth\AuthController@getLogout');
 
-// 前台用户管理
+// 前台用户中心
 get('/home','AdminController@user_home');
 get('/home/edit','AdminController@user_front_edit');
 patch('/home','AdminController@user_front_update');
+
+// aff模块
+get('/aff','AffController@index');
+get('/aff/{id}','AffController@access');
 
 // 管理员面板
 get('/admin','AdminController@host_index');
@@ -38,6 +42,8 @@ patch('/admin/users/{id}','AdminController@user_update');
 get('/admin/setings/general','AdminController@setings_general');
 get('/admin/setings/server','AdminController@setings_server');
 patch('/admin/setings/{id}','AdminController@setings_update');
+// aff
+get('/admin/aff/{id}','AffController@admin_user_index');
 
 // 订单模块
 post('/order/new','OrderController@new_store');

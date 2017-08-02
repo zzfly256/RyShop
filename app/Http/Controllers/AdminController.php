@@ -174,4 +174,10 @@ class AdminController extends Controller
         $setings->update($input);
         return redirect()->back();
     }
+
+    public function setings_server()
+    {
+        $server = Setings::server();
+        return view('admin.setings_server',compact('server'));
+    }
 }

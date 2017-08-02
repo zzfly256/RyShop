@@ -6,12 +6,15 @@
 
 <section class="container grid-960">
     <div class="container">
+        <img class="index_img" src="{{\App\Setings::whereRaw("name='index_img'")->first()->value}}" alt="{{\App\Setings::whereRaw("name='siteName'")->first()->value}}">
+        <div class="index_info">
+            {!! \App\Setings::whereRaw("name='index_text'")->first()->value !!}
+        </div>
         <div class="columns">
             @foreach($good as $goodinfo)
             <div class="column col-4 col-md-12">
                 <div class="card">
                     <div class="card-image">
-
                     </div>
                     <div class="card-header">
                         <h4 class="card-title">{{$goodinfo->name}}</h4>

@@ -17,7 +17,7 @@
                     <a href="/admin/order/paid" class="new_ticket_btn"> 已支付（<?php echo \App\Order::all()->count()-\App\Order::all()->where("payout","=",'0')->count();?>）</a>
                 </div>
                 <div class="card">
-                    <table class="table table-striped table-hover">
+                    <table class="table table-striped table-hover" style="border-top: 1px solid #eee">
                         <thead>
                         <tr>
                             <th>订单号</th>
@@ -36,7 +36,12 @@
                                 <td>{{$orderinfo->model}}</td>
                                 <td>{{$orderinfo->price}}</td>
                                 <td><a href="/admin/order/user/{{$orderinfo->user_id}}">{{$orderinfo->user->name}}</a></td>
-                                <td><?php if($orderinfo->payout==1){echo '<label class="label label-success">成功</label>';}else{echo '<label class="label label-warning">未支付</label>';}?></td>
+                                <td>@if($orderinfo->payout==1)
+                                        <label class="label label-success"> @if($orderinfo->aff_id!=0) AFF @else 成功 @endif </label>
+                                        @else
+                                        <label class="label label-warning">未支付</label>
+                                    @endif
+                                </td>
                                 <td>{{$orderinfo->end_at}}</td>
                                 <td><a href="/admin/order/{{$orderinfo->no}}" class="btn">详情</a></td>
                             </tr>

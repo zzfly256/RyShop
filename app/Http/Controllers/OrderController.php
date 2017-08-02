@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Cookie;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Order;
@@ -44,10 +44,21 @@ class OrderController extends Controller
     public function new_store(Request $request)
     {
         $input = $request->all();
+
         // 从数据库获取价格
         $good = Good::whereRaw("model='".$request->input('model')."'")->get();
         $date = Carbon::parse('+1 year')->toDateString();
         $action = array_merge(['price' => $good[0]->price,'end_at' => $date, 'user_id' => Auth::user()->id],$input);
+        // Cookie中读取是否走了aff
+        if(Cookie::get('aff'))
+        {
+            $aff_id = base64_decode(Cookie::get('aff'));
+            // 禁止自己走自己aff
+            if($aff_id!=Auth::user()->id) {
+                $action = array_merge(['aff_id' => $aff_id], $action);
+            }
+        }
+        //dd($action);
         //dd($request->input('no'));
         Order::create($action);
         $cur_order = Order::whereRaw("no='".$request->input('no')."'")->get();
@@ -72,6 +83,15 @@ class OrderController extends Controller
             $host_pass = chr (rand(97,122)).chr (rand(97,122)).chr (rand(97,122)).chr (rand(97,122)).rand(1000,9999);
             $host_info = ['order_no'=>$cur_order->no, 'price'=>$total, 'host_name'=>$host_name, 'host_pass'=>$host_pass, 'model'=>$cur_order->model, 'user_id'=> Auth::user()->id,'end_at'=>$cur_order->end_at,'host_panel'=>$cur_good[0]->panel];
             Host::create($host_info);
+            //dd($cur_order->aff_id);
+            if($cur_order->aff_id!=0)
+            {
+                $aff_user = User::findOrFail($cur_order->aff_id);
+                $cur_amount = $aff_user->amount;
+                $new_amount = $cur_amount+($total)/20;
+                $aff_user->update(['amount'=>$new_amount]);
+            }
+
             if(Host::create_host($cur_good[0]->panel,$cur_order->model,$host_name,$host_pass))
             {
                 $host_update = ['valid' => '1'];

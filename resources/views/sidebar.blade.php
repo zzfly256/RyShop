@@ -43,6 +43,9 @@
         <a href="/home/edit">
             <i class="icon icon-link"></i> 修改资料
         </a>
+        <a href="/aff">
+            <i class="icon icon-link"></i> 用户推广
+        </a>
     </li>
     <li class="divider">
     <li class="menu-item">

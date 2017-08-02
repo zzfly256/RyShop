@@ -20,6 +20,7 @@ body{
 }
 .navbar{
   //background: rgba(241, 241, 241, 0.73);
+  //font-weight: 300;
 }
 .menu .menu-item > a{
   text-align: left;
@@ -135,7 +136,8 @@ body{
   padding:1rem 1.2rem;
   background: #fff;
   font-size:80%;
-  border-bottom: 1px solid #eee;
+  //border-bottom: 1px solid #eee;
+  border-left: 1px solid #2196F3;
 }
 
 .host-btn-panel{
@@ -175,4 +177,44 @@ body{
   width: 100%;
   //background-color: #fff;
   padding: 10px;
+}
+
+.index_img{
+  width:100%;
+  height:auto;
+}
+
+.index_info{
+  width:100%;
+  height:auto;
+  padding:1rem;
+  background: #fff;
+  margin-top: 5px;
+  border-left: 1px solid #2196F3;
+}
+
+.admin-info {
+  padding:1rem;
+  background: #fff;
+  font-size: 80%;
+  border-left: 1px solid #2196F3;
+}
+
+.aff-info{
+  padding:1rem;
+  background: #fff;
+  line-height:2;
+  //font-size: 80%;
+  //border-left: 1px solid #2196F3;
+  //font-weight: 300;
+  margin-bottom:0px;
+  margin-top: 0px;
+  border-top:1px solid #eee !important;
+  text-align: center;
+  & input{
+    font-weight: 300;
+    border:none;
+    width: 200px;
+    text-align:left;
+  }
 }

@@ -58,6 +58,12 @@
                             <td>用户QQ</td>
                             <td>{{$order_get->user->qq}}</td>
                         </tr>
+                        @if($order_get->aff_id!=0)
+                            <tr>
+                                <td>推介用户</td>
+                                <td>{{\App\User::find($order_get->aff_id)->name}}</td>
+                            </tr>
+                        @endif
                         </tbody>
                     </table>
 

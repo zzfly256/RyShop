@@ -21,7 +21,7 @@
 
                     @if(Auth::user()->ticket->count())
                         <div class="ticket-panel">
-                            <table class="table table-striped table-hover">
+                            <table class="table table-striped table-hover" style="border-top: 1px solid #eee">
                                 <thead>
                                 <tr>
                                     <th>标题</th>

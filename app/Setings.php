@@ -31,4 +31,30 @@ class Setings extends Model
         Setings::create($footer_text);
 
     }
+
+    public static function server()
+    {
+        $dir="../server/";
+        $file=scandir($dir);
+        $result = [];
+        $i=0;
+        foreach ($file as $item) {
+            if($item!='.' and $item!='..')
+            {
+                if(is_file($dir.$item."/create.php") and is_file($dir.$item."/start.php") and is_file($dir.$item."/stop.php") and is_file($dir.$item."/delete.php") and is_file($dir.$item."/setings.php"))
+                {
+                    $readConfig = explode("http://",file_get_contents($dir.$item."/setings.php"));
+                    //dd($readConfig);
+                    $readUrl = explode(":",$readConfig[1]);
+                    //dd($readUrl);
+                    $result[$i++] = ['name'=>$item, 'ip'=>$readUrl[0], 'status'=>1];
+                }else{
+                    $result[$i++] = ['name'=>$item, 'ip'=>'', 'status'=>0];
+                }
+
+            }
+        }
+        return $result;
+    }
+
 }

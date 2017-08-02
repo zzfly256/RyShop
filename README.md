@@ -1,5 +1,5 @@
 # RyShop 虚拟主机销售系统(在线商城程序)
-Updated at 7/31/2017
+Updated at 8/02/2017
 
 ## 模块设计
 ### 物品模块
@@ -81,6 +81,7 @@ Updated at 7/31/2017
 - password string
 - qq string
 - level integer
+- amount double
 - timestamps
 
 ### 商品部分
@@ -101,6 +102,7 @@ Updated at 7/31/2017
 - price double
 - end_at string
 - payout boolean
+- aff_id integer
 - timestamps
 
 ### 已开通主机部分

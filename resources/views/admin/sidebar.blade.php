@@ -52,7 +52,7 @@
         <a href="/admin/setings/general">
             <i class="icon icon-link"></i> 常规设置
         </a>
-        <a href="/admin/host">
+        <a href="/admin/setings/server">
             <i class="icon icon-edit"></i> 服务器对接
         </a>
     </li>

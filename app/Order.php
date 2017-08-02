@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     protected $table = 'orders';
-    protected $fillable = ['no', 'model', 'price', 'user_id', 'end_at', 'payout', 'target'];
+    protected $fillable = ['no', 'model', 'price', 'user_id', 'end_at', 'payout', 'target', 'aff_id'];
 
     public static function checkout($price,$id,$no)
     {

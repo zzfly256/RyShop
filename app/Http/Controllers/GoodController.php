@@ -16,6 +16,12 @@ class GoodController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function single_index()
+    {
+        $good = Good::all();
+        return view("index",compact("good"));
+    }
+
     public function index()
     {
         $good = Good::all();

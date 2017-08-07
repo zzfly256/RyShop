@@ -34,10 +34,9 @@
                         <br>
                         <span>网站账户：<small>{{$hostinfo->host_name}}</small></span>
                         <span>默认密码：<small>{{$hostinfo->host_pass}}</small></span>
-                        @if($hostinfo->valid==1)
-                            <br>
-                            <span><a href="/my_host/panel/{{$hostinfo->host_panel}}">进入控制面板</a></span>
-                        @endif
+                        <br>
+                        <span><a href="/my_host/panel/{{$hostinfo->host_panel}}">进入控制面板</a></span>
+
 
                     </div>
                 @endforeach

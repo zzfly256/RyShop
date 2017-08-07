@@ -46,13 +46,9 @@ class HostController extends Controller
 
     public function show_panel($panel)
     {
-        if($panel=="ep1")
-        {
-            return view("ep1_panel");
-        }
-        else{
-            dd("面板错误，朋友你在搞笑了吧");
-        }
+        //dd(Host::go_panel($panel));
+        $url=Host::go_panel($panel);
+        return redirect($url);
     }
 
     public function change_status($id,Request $request)

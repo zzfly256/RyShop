@@ -22,7 +22,7 @@
                         <br>
                         <span>订单号：{{$orderinfo->no}}</span>
                         <span>支付金额：{{$orderinfo->price}}</span>
-                        <span>您的佣金：{{$orderinfo->price/10}}</span>
+                        <span>佣金：{{$orderinfo->price/10}}</span>
 
                     </div>
                 @endforeach

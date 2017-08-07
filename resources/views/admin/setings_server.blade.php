@@ -17,6 +17,7 @@
                         <tr>
                             <th>对接模块</th>
                             <th>IP地址</th>
+                            <th>登陆地址</th>
                             <th>识别情况</th>
                         </tr>
                         </thead>
@@ -26,6 +27,7 @@
                                 <tr>
                                     <td>{{$item["name"]}}</td>
                                     <td>{{$item["ip"]}}</td>
+                                    <td>{{$item["panel"]}}</td>
                                     <td>
                                         @if($item["status"]==0)
                                             未识别

@@ -60,6 +60,15 @@ class Host extends Model
 
     }
 
+    public static function go_panel($panel)
+    {
+        require('../server/'.$panel.'/setings.php');
+
+        return $loginPanel;
+
+
+    }
+
     public function user()
     {
         return $this->belongsTo('App\User');

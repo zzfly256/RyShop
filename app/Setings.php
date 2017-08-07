@@ -29,6 +29,12 @@ class Setings extends Model
         Setings::create($ticket_text);
         $footer_text = ['name'=>"footer_text", 'value'=>'RyShop 主机销售系统. 2017'];
         Setings::create($footer_text);
+        $aff_rate = ['name'=>"aff_rate", 'value'=>'0.2'];
+        Setings::create($aff_rate);
+        $aff_standard = ['name'=>"aff_standard", 'value'=>'50'];
+        Setings::create($aff_standard);
+        $aff_text = ['name'=>"aff_text", 'value'=>'RyShop 主机销售系统提醒您，通过您的链接访问我们的网站，购买我们的产品，您可以获得10%的佣金并满50元可以提现哦'];
+        Setings::create($aff_text);
 
     }
 
@@ -43,11 +49,10 @@ class Setings extends Model
             {
                 if(is_file($dir.$item."/create.php") and is_file($dir.$item."/start.php") and is_file($dir.$item."/stop.php") and is_file($dir.$item."/delete.php") and is_file($dir.$item."/setings.php"))
                 {
-                    $readConfig = explode("http://",file_get_contents($dir.$item."/setings.php"));
-                    //dd($readConfig);
-                    $readUrl = explode(":",$readConfig[1]);
-                    //dd($readUrl);
-                    $result[$i++] = ['name'=>$item, 'ip'=>$readUrl[0], 'status'=>1];
+                    include $dir.$item."/setings.php";
+                    $ip=explode("/",$url);
+                    $ip=explode(":",$ip[2]);
+                    $result[$i++] = ['name'=>$item, 'ip'=>$ip[0],'panel'=>$loginPanel, 'status'=>1];
                 }else{
                     $result[$i++] = ['name'=>$item, 'ip'=>'', 'status'=>0];
                 }

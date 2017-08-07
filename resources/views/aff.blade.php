@@ -18,7 +18,7 @@
                                 <i class="icon icon-people"></i>
                             </div>
                             <h4 class="empty-title">{{Auth::user()->name}}  <small><small><small>UID:{{Auth::user()->id}}</small></small></small></h4>
-                            <p class="empty-subtitle">您推介成功的订单共 <b>{{count($order)}}</b> 个，账户余额<button class="btn btn-link tooltip tooltip-right" @if(Auth::user()->amount<50) data-tooltip="超过50元可以提现哦！" @else data-tooltip="您可以提交工单联系管理员提现" @endif>￥{{Auth::user()->amount}}</button></p>
+                            <p class="empty-subtitle">您推介成功的订单共 <b>{{count($order)}}</b> 个，账户余额<button class="btn btn-link tooltip tooltip-right" @if(Auth::user()->amount<\App\Setings::whereRaw("name='aff_standard'")->first()->value) data-tooltip="超过50元可以提现哦！" @else data-tooltip="您可以提交工单联系管理员提现" @endif>￥{{Auth::user()->amount}}</button></p>
 
                             <p class="empty-subtitle">您的专属推广链接：{{'http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"]}}/{{Auth::user()->id}}</p>
                         </div>
@@ -31,12 +31,12 @@
                             <br>
                             <span>订单号：{{$orderinfo->no}}</span>
                             <span>支付金额：{{$orderinfo->price}}</span>
-                            <span>您的佣金：{{$orderinfo->price/10}}</span>
+                            <span>您的佣金：{{$orderinfo->price*\App\Setings::whereRaw("name='aff_rate'")->first()->value}}</span>
 
                         </div>
                     @endforeach
                     <div class="host-tips toast" @if(count($order)) style="margin-top:10px;" @endif>
-                        {!! \App\Setings::whereRaw("name='ticket_text'")->first()->value !!}
+                        {!! \App\Setings::whereRaw("name='aff_text'")->first()->value !!}
                     </div>
                 </div>
 

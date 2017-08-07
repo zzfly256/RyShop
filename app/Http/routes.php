@@ -4,7 +4,7 @@ resource('/host','GoodController');
 get('/host/{model}','GoodController@show');
 
 // 主页
-get('/','GoodController@index');
+get('/','GoodController@single_index');
 
 // 用户模块
 get('/auth/login','Auth\AuthController@getLogin');

@@ -28,7 +28,7 @@
                             <td>{{$goodinfo->name}}</td>
                             <td>{{$goodinfo->model}}</td>
                             <td>{{$goodinfo->price}}</td>
-                            <td>{{$goodinfo->panel}}</td>
+                            <td><a href="/admin/setings/server">{{$goodinfo->panel}}</a></td>
                             <td>
                                 <div class="input-group input-inline">
                                     <a class="btn" href="/admin/host/{{$goodinfo->id}}/edit">编辑</a>

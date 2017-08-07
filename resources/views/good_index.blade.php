@@ -6,7 +6,6 @@
 
 <section class="container grid-960">
     <div class="container">
-        <img class="index_img" src="{{\App\Setings::whereRaw("name='index_img'")->first()->value}}" alt="{{\App\Setings::whereRaw("name='siteName'")->first()->value}}">
         <div class="index_info">
             {!! \App\Setings::whereRaw("name='index_text'")->first()->value !!}
         </div>

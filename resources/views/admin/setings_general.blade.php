@@ -97,7 +97,7 @@
                     {!!  Form::model($setings[5],['url'=>'/admin/setings/'.$setings[5]->id,'method'=>'PATCH','class'=>'form-horizontal']) !!}
                     <div class="form-group">
                         <div class="col-2">
-                            {!! Form::label('主页提示语',null,["class"=>"form-label"]) !!}
+                            {!! Form::label('列表提示语',null,["class"=>"form-label"]) !!}
                         </div>
                         <div class="col-8">
                             {!! Form::text('value',$setings[5]->value,["class"=>"form-input"]) !!}

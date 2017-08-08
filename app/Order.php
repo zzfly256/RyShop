@@ -16,8 +16,9 @@ class Order extends Model
 
         $apiid = '13370';
         $apikey = md5('6ce72252d6962a926a26fa2c6d685f6c');
-        $showurl = 'http://127.0.0.1/order/new/result';
+        $showurl = 'http://'.Setings::whereRaw('name="domain"')->first()->value.'/order/new/result';
         $addnum =  'alip'.$apiid.'00'.$no;
+        //dd($showurl);
 
         echo "
 		<form name='form1' action='https://api.jsjapp.com/plugin.php?id=add:alipay' method='POST'>

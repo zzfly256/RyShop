@@ -28,6 +28,20 @@
                         </div>
                     {!!  Form::close() !!}
 
+                    {!!  Form::model($setings[12],['url'=>'/admin/setings/'.$setings[12]->id,'method'=>'PATCH','class'=>'form-horizontal']) !!}
+                    <div class="form-group">
+                        <div class="col-2">
+                            {!! Form::label('站点域名',null,["class"=>"form-label"]) !!}
+                        </div>
+                        <div class="col-8">
+                            {!! Form::text('value',$setings[12]->value,["class"=>"form-input"]) !!}
+                        </div>
+                        <div class="col-2">
+                            {!! Form::submit('保存',["class"=>"btn","style"=>"margin-left:25px"]) !!}
+                        </div>
+                    </div>
+                    {!!  Form::close() !!}
+
                     <li class="divider" data-content="SEO设置">
                     </li>
 

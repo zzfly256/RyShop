@@ -9,7 +9,7 @@ class Setings extends Model
     protected $table = 'setings';
     protected $fillable = ['name','value'];
 
-    public static function install($siteName)
+    public static function install($siteName,$siteUrl)
     {
         $name = ['name'=>"siteName",'value'=>$siteName];
         Setings::create($name);
@@ -35,7 +35,8 @@ class Setings extends Model
         Setings::create($aff_standard);
         $aff_text = ['name'=>"aff_text", 'value'=>'RyShop 主机销售系统提醒您，通过您的链接访问我们的网站，购买我们的产品，您可以获得10%的佣金并满50元可以提现哦'];
         Setings::create($aff_text);
-
+        $domain = ['name'=>"domain", 'value'=>$siteUrl];
+        Setings::create($domain);
     }
 
     public static function server()

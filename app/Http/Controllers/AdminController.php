@@ -155,7 +155,7 @@ class AdminController extends Controller
             $user["level"] = 0;
             //dd($user);
             User::create($user);
-            Setings::install($request->input('site'));
+            Setings::install($request->input('site'),$request->input('siteUrl'));
             return redirect('/auth/login');
         }
         return redirect('/');

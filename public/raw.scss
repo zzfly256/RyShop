@@ -132,6 +132,38 @@ body{
   }
 }
 
+.my_host_item{
+  background: #fff;
+  float: left;
+  text-align: center;
+  border-top: 1px solid #f1f1f1;
+  & .model-label{
+    font-weight:300;
+  }
+  & h6{
+    margin-bottom:1rem;
+  }
+  & label{
+    margin-left: 7px;
+  }
+  & p{
+    margin:0rem;
+    line-height:2;
+  }
+  &:nth-child(3n-1){
+    border-right: 1px solid #f1f1f1;
+  }
+  &:nth-child(3n+1){
+    border-left: 1px solid #f1f1f1;
+  }
+  & p small{
+    opacity: 0.8;
+  }
+  & .status{
+    font-size: 95%;
+  }
+}
+
 .item-title{
   padding:1rem 1.2rem;
   background: #fff;

@@ -19,7 +19,7 @@
 
                     </div>
 
-                    @if(Auth::user()->ticket->count())
+                    @if($user->count())
                         <div class="ticket-panel">
                             <table class="table table-striped table-hover" style="border-top: 1px solid #eee">
                                 <thead>

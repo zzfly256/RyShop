@@ -46,6 +46,17 @@
         </a>
     </li>
 
+    <li class="divider" data-content="新闻公告">
+    </li>
+    <li class="menu-item">
+        <a href="/admin/news/add">
+            <i class="icon icon-edit"></i> 发布公告
+        </a>
+        <a href="/admin/news">
+            <i class="icon icon-message"></i> 公告列表
+        </a>
+    </li>
+
     <li class="divider" data-content="系统设置">
     </li>
     <li class="menu-item">

@@ -18,6 +18,10 @@ get('/home','AdminController@user_home');
 get('/home/edit','AdminController@user_front_edit');
 patch('/home','AdminController@user_front_update');
 
+// 新闻公告
+get('/news','newsController@user_index');
+get('/news/{id}','newsController@user_details');
+
 // aff模块
 get('/aff','AffController@index');
 get('/aff/{id}','AffController@access');
@@ -44,6 +48,13 @@ get('/admin/setings/server','AdminController@setings_server');
 patch('/admin/setings/{id}','AdminController@setings_update');
 // aff
 get('/admin/aff/{id}','AffController@admin_user_index');
+// 新闻公告
+get('/admin/news','newsController@admin_index');
+get('/admin/news/add','newsController@create');
+post('/admin/news/add','newsController@store');
+get('/admin/news/{id}/edit','newsController@edit');
+patch('/admin/news/{id}','newsController@update');
+delete('/admin/news/{id}','newsController@destroy');
 
 // 订单模块
 post('/order/new','OrderController@new_store');

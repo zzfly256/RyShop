@@ -54,7 +54,7 @@ class newsController extends Controller
             $action = array_merge($input, ['user_id' => $user_id]);
             if (!empty($request->input("content")) && !empty($request->input("title"))) {
                 News::create($action);
-                return view('admin.news_list');
+                return redirect('/admin/news');
             } else {
                 dd("请完整填写标题和内容");
             }

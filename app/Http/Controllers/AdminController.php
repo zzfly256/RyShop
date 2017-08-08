@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -102,6 +103,7 @@ class AdminController extends Controller
      */
     public function user_update(Request $request, $id)
     {
+        if(Auth::user()->level==0):
         $user = User::findOrFail($id);
         $input = $request->all();
         if(!empty($request->input('the_password'))) {
@@ -109,6 +111,7 @@ class AdminController extends Controller
             $input = array_merge(['password'=>$new_password],$input);
         }
         $user->update($input);
+        endif;
         return redirect("/admin/users/");
     }
 
@@ -116,6 +119,7 @@ class AdminController extends Controller
     {
         $user = Auth::user();
         $input = $request->all();
+        $input['level']=Auth::user()->level;
         if(!empty($request->input('the_password'))) {
             $new_password = bcrypt($request->input('the_password'));
             $input = array_merge(['password'=>$new_password],$input);

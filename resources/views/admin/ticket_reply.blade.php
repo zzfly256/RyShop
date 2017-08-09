@@ -29,7 +29,7 @@
                         <hr>
                         {!! $tic->content !!}
 
-                        {!!  Form::open(['url'=>'/my_ticket/'.$tic->id.'/reply','method'=>'PATCH']) !!}
+                        {!!  Form::open(['url'=>'/admin/tickets/'.$tic->id.'/reply','method'=>'PATCH']) !!}
                         <div class="form-group">
                             {!! Form::label('正文（支持HTML）',null,["class"=>"form-label"]) !!}
                             {!! Form::textarea('content',null,["class"=>"form-input"]) !!}

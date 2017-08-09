@@ -6,6 +6,7 @@ use App\Ticket;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Mail;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -147,28 +148,35 @@ class TicketController extends Controller
     public function user_update(Request $request, $id)
     {
         $tic=Ticket::findOrFail($id);
-        $input = $request->all();
-        if(empty(trim($input["content"]))){
-            return redirect("/my_ticket/".$id);
-        }
-        $input["content"] = $tic->content.$request->input('content')."<br><small class='ticket-tail'>".Auth::user()->name." 发布于 ".Carbon::now()." </small><hr>";
-        $action = array_merge(["reply"=>Auth::user()->id],$input);
-        //dd($action);
-        $tic->update($action);
+        //dd($tic);
+        if(Auth::user()->id == $tic->user_id):
+            $input = $request->all();
+            if(empty(trim($input["content"]))){
+                return redirect("/my_ticket/".$id);
+            }
+            $input["content"] = $tic->content.$request->input('content')."<br><small class='ticket-tail'>".Auth::user()->name." 发布于 ".Carbon::now()." </small><hr>";
+            $action = array_merge(["reply"=>Auth::user()->id],$input);
+            //dd($action);
+            $tic->update($action);
+        endif;
         return redirect('/my_ticket/'.$id);
     }
 
     public function admin_update(Request $request, $id)
     {
-        $tic=Ticket::findOrFail($id);
-        $input = $request->all();
-        if(empty(trim($input["content"]))){
-            return redirect("/my_ticket/".$id);
-        }
-        $input["content"] = $tic->content.$request->input('content')."<br><small class='ticket-tail'>".Auth::user()->name." 发布于 ".Carbon::now()." </small><hr>";
-        $action = array_merge(["reply"=>Auth::user()->id],$input);
-        //dd($action);
-        $tic->update($action);
+        if(Auth::user()->level == 0):
+            $tic=Ticket::findOrFail($id);
+            $input = $request->all();
+            if(empty(trim($input["content"]))){
+                return redirect("/my_ticket/".$id);
+            }
+            $raw_content = $input["content"];
+            $input["content"] = $tic->content.$request->input('content')."<br><small class='ticket-tail'>".Auth::user()->name." 发布于 ".Carbon::now()." </small><hr>";
+            $action = array_merge(["reply"=>Auth::user()->id],$input);
+            //dd($action);
+            $tic->update($action);
+            Mail::mail($tic->user_id,"ticket",$tic->title."||".$raw_content);
+        endif;
         return redirect('/admin/tickets/'.$id);
     }
 

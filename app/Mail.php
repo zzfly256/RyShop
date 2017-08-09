@@ -11,7 +11,7 @@ class Mail extends Model
 
         switch ($type){
             case "signup":
-                $mailtitle = "欢迎来到".Setings::whereRaw("name='siteName'")->first()->value;
+                $mailtitle = "[".Setings::whereRaw("name='siteName'")->first()->value."] 欢迎您的到来！";
                 $mailcontent = "欢迎您，".User::find($user)->name." <br>您的 UID：".User::find($user)->id."<br> 登录邮箱：".User::find($user)->email. " <br> 您可以到我们的官网：".Setings::whereRaw("name='domain'")->first()->value." 进行产品选购。<br>如有问题，欢迎发送工单提问，祝您使用愉快！";
                 break;
             case "order":
@@ -23,6 +23,11 @@ class Mail extends Model
                 $content_info = explode("||",$content);
                 $mailtitle = "[".$content_info[0]."] 已开通";
                 $mailcontent = Setings::whereRaw("name='siteName'")->first()->value."用户 ".User::find($user)->name."： <br>您的购买的 ".$content_info[0]." 已经开通<br>网站账户：".$content_info[1]." 默认密码：".$content_info[2]." 控制面板：".$content_info[3]."<br>如有问题，欢迎发送工单提问，祝您使用愉快！";
+                break;
+            case "ticket":
+                $content_info = explode("||",$content);
+                $mailtitle = "您在 [".Setings::whereRaw("name='siteName'")->first()->value."] 的工单被回复";
+                $mailcontent = Setings::whereRaw("name='siteName'")->first()->value."用户 ".User::find($user)->name."： <br>您的工单 [".$content_info[0]."] 已经被管理员回复，内容如下：<br><pre>".$content_info[1]."</pre><br>如有问题，欢迎发送工单提问，祝您使用愉快！";
                 break;
         }
 

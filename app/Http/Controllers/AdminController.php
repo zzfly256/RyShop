@@ -10,6 +10,7 @@ use App\User;
 use App\Good;
 use App\Order;
 use App\Setings;
+use App\Mail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
@@ -170,18 +171,29 @@ class AdminController extends Controller
         $setings = Setings::all();
         return view('admin.setings_general',compact('setings'));
     }
+
+    public function setings_theme()
+    {
+        $setings = Setings::all();
+        return view('admin.setings_theme',compact('setings'));
+    }
+
     public function setings_update(Request $request,$id)
     {
+        if(Auth::user()->level==0):
         $setings = Setings::find($id);
         $input = $request->all();
         //dd($input);
         $setings->update($input);
+        endif;
         return redirect()->back();
     }
 
     public function setings_server()
     {
+        //Mail::mail(User::all()->last()->id,"order","3838438");
         $server = Setings::server();
-        return view('admin.setings_server',compact('server'));
+        $setings = Setings::all();
+        return view('admin.setings_server',compact('server'))->with('setings',$setings);
     }
 }

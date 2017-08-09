@@ -91,79 +91,6 @@
                     </div>
                     {!!  Form::close() !!}
 
-                    <li class="divider" data-content="外观设置">
-                    </li>
-
-                    {!!  Form::model($setings[4],['url'=>'/admin/setings/'.$setings[4]->id,'method'=>'PATCH','class'=>'form-horizontal']) !!}
-                    <div class="form-group">
-                        <div class="col-2">
-                            {!! Form::label('主页展示图',null,["class"=>"form-label"]) !!}
-                        </div>
-                        <div class="col-8">
-                            {!! Form::text('value',$setings[4]->value,["class"=>"form-input"]) !!}
-                        </div>
-                        <div class="col-2">
-                            {!! Form::submit('保存',["class"=>"btn","style"=>"margin-left:25px"]) !!}
-                        </div>
-                    </div>
-                    {!!  Form::close() !!}
-
-                    {!!  Form::model($setings[5],['url'=>'/admin/setings/'.$setings[5]->id,'method'=>'PATCH','class'=>'form-horizontal']) !!}
-                    <div class="form-group">
-                        <div class="col-2">
-                            {!! Form::label('列表提示语',null,["class"=>"form-label"]) !!}
-                        </div>
-                        <div class="col-8">
-                            {!! Form::text('value',$setings[5]->value,["class"=>"form-input"]) !!}
-                        </div>
-                        <div class="col-2">
-                            {!! Form::submit('保存',["class"=>"btn","style"=>"margin-left:25px"]) !!}
-                        </div>
-                    </div>
-                    {!!  Form::close() !!}
-
-                    {!!  Form::model($setings[6],['url'=>'/admin/setings/'.$setings[6]->id,'method'=>'PATCH','class'=>'form-horizontal']) !!}
-                    <div class="form-group">
-                        <div class="col-2">
-                            {!! Form::label('购买提示语',null,["class"=>"form-label"]) !!}
-                        </div>
-                        <div class="col-8">
-                            {!! Form::text('value',$setings[6]->value,["class"=>"form-input"]) !!}
-                        </div>
-                        <div class="col-2">
-                            {!! Form::submit('保存',["class"=>"btn","style"=>"margin-left:25px"]) !!}
-                        </div>
-                    </div>
-                    {!!  Form::close() !!}
-
-                    {!!  Form::model($setings[7],['url'=>'/admin/setings/'.$setings[7]->id,'method'=>'PATCH','class'=>'form-horizontal']) !!}
-                    <div class="form-group">
-                        <div class="col-2">
-                            {!! Form::label('工单提示语',null,["class"=>"form-label"]) !!}
-                        </div>
-                        <div class="col-8">
-                            {!! Form::text('value',$setings[7]->value,["class"=>"form-input"]) !!}
-                        </div>
-                        <div class="col-2">
-                            {!! Form::submit('保存',["class"=>"btn","style"=>"margin-left:25px"]) !!}
-                        </div>
-                    </div>
-                    {!!  Form::close() !!}
-
-                    {!!  Form::model($setings[8],['url'=>'/admin/setings/'.$setings[8]->id,'method'=>'PATCH','class'=>'form-horizontal']) !!}
-                    <div class="form-group">
-                        <div class="col-2">
-                            {!! Form::label('页脚版权',null,["class"=>"form-label"]) !!}
-                        </div>
-                        <div class="col-8">
-                            {!! Form::text('value',$setings[8]->value,["class"=>"form-input"]) !!}
-                        </div>
-                        <div class="col-2">
-                            {!! Form::submit('保存',["class"=>"btn","style"=>"margin-left:25px"]) !!}
-                        </div>
-                    </div>
-                    {!!  Form::close() !!}
-
                     <li class="divider" data-content="推介设置">
                     </li>
 
@@ -177,6 +104,17 @@
                         </div>
                         <div class="col-2">
                             {!! Form::submit('保存',["class"=>"btn","style"=>"margin-left:25px"]) !!}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-2">
+
+                        </div>
+                        <div class="col-8">
+                            <small>佣金比例为 0 ~ 1 之间的小数，被推介的用户成功开通产品后将会获得此比例的佣金</small>
+                        </div>
+                        <div class="col-2">
+
                         </div>
                     </div>
                     {!!  Form::close() !!}
@@ -195,19 +133,6 @@
                     </div>
                     {!!  Form::close() !!}
 
-                    {!!  Form::model($setings[11],['url'=>'/admin/setings/'.$setings[11]->id,'method'=>'PATCH','class'=>'form-horizontal']) !!}
-                    <div class="form-group">
-                        <div class="col-2">
-                            {!! Form::label('推介提示语',null,["class"=>"form-label"]) !!}
-                        </div>
-                        <div class="col-8">
-                            {!! Form::text('value',$setings[11]->value,["class"=>"form-input"]) !!}
-                        </div>
-                        <div class="col-2">
-                            {!! Form::submit('保存',["class"=>"btn","style"=>"margin-left:25px"]) !!}
-                        </div>
-                    </div>
-                    {!!  Form::close() !!}
 
 
                 </div>

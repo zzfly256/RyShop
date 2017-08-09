@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail;
+use App\Setings;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
@@ -46,9 +48,10 @@ class OrderController extends Controller
         $input = $request->all();
 
         // 从数据库获取价格
-        $good = Good::whereRaw("model='".$request->input('model')."'")->get();
+        $good = Good::whereRaw("model='".base64_decode($request->input('type'))."'")->get();
+        //dd($good);
         $date = Carbon::parse('+1 year')->toDateString();
-        $action = array_merge(['price' => $good[0]->price,'end_at' => $date, 'user_id' => Auth::user()->id],$input);
+        $action = array_merge(['price' => $good[0]->price,'end_at' => $date, 'user_id' => Auth::user()->id, 'no'=>base64_decode($request->input('order')) , 'model'=>base64_decode($request->input('type'))],$input);
         // Cookie中读取是否走了aff
         if(Cookie::get('aff'))
         {
@@ -61,9 +64,10 @@ class OrderController extends Controller
         //dd($action);
         //dd($request->input('no'));
         Order::create($action);
-        $cur_order = Order::whereRaw("no='".$request->input('no')."'")->get();
+        $cur_order = Order::whereRaw("no='".base64_decode($request->input('order'))."'")->get();
         //dd($id);
-        Order::checkout($good[0]->price,$cur_order[0]->id,$request->input('no'));
+        Mail::mail(Auth::user()->id,"order",base64_decode($request->input('order'))."||".$good[0]->price."||购入产品 ".base64_decode($request->input('type')));
+        Order::checkout($good[0]->price,$cur_order[0]->id,base64_decode($request->input('order')));
         //return redirect("/admin/host");
     }
 
@@ -88,7 +92,8 @@ class OrderController extends Controller
             {
                 $aff_user = User::findOrFail($cur_order->aff_id);
                 $cur_amount = $aff_user->amount;
-                $new_amount = $cur_amount+($total)/20;
+                $rate = Setings::whereRaw("name='aff_rate'")->first()->value;
+                $new_amount = ($total)*$rate+$cur_amount;
                 $aff_user->update(['amount'=>$new_amount]);
             }
 
@@ -97,6 +102,7 @@ class OrderController extends Controller
                 $host_update = ['valid' => '1'];
                 $cur_host = Host::whereRaw("order_no='".$cur_order->no."'")->get();
                 $cur_host[0]->update($host_update);
+                Mail::mail(Auth::user()->id,"create",Good::whereRaw("model='".$cur_order->model."'")->first()->name." ".$cur_order->model."||".$host_name."||".$host_pass."||".Setings::login($cur_good[0]->panel));
                 return redirect('/my_host');
             }else{
                 dd("主机所在服务器通信故障，请迅速联系售后，并提供您的用户名、UID、订单号以便快速帮您补办主机");
@@ -129,6 +135,7 @@ class OrderController extends Controller
         //dd($action);
         Order::create($action);
         $cur_order = Order::whereRaw("no='".$input['no']."'")->get();
+        Mail::mail(Auth::user()->id,"order",$input['no']."||".$host->price."||续费");
         Order::renew($host->price,$cur_order[0]->id,$input['no']);
         //return redirect("/admin/host");
     }

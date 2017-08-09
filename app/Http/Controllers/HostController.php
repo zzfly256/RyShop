@@ -44,12 +44,6 @@ class HostController extends Controller
 
     }
 
-    public function show_panel($panel)
-    {
-        //dd(Host::go_panel($panel));
-        $url=Host::go_panel($panel);
-        return redirect($url);
-    }
 
     public function change_status($id,Request $request)
     {

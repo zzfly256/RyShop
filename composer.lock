@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "46731a74b7ac6fc6544505c661be42c9",
+    "content-hash": "0e6a3f1e864c22af496a42a5688dee16",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1954,6 +1954,59 @@
                 "dump"
             ],
             "time": "2017-06-14T16:20:11+00:00"
+        },
+        {
+            "name": "txthinking/mailer",
+            "version": "v1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/txthinking/Mailer.git",
+                "reference": "d2434327365fe8535189ed4be37a9494c4588061"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/txthinking/Mailer/d2434327365fe8535189ed4be37a9494c4588061.zip",
+                "reference": "d2434327365fe8535189ed4be37a9494c4588061",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "erb/testing-tools": "dev-master",
+                "monolog/monolog": "~1.13",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tx\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cloud",
+                    "email": "cloud@txthinking.com",
+                    "homepage": "http://www.txthinking.com",
+                    "role": "Thinker"
+                },
+                {
+                    "name": "Matt Sowers",
+                    "email": "msowers@erblearn.org"
+                }
+            ],
+            "description": "A very lightweight PHP SMTP mail sender",
+            "homepage": "http://github.com/txthinking/Mailer",
+            "keywords": [
+                "mail",
+                "smtp"
+            ],
+            "time": "2016-09-29T02:06:37+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Mail;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -59,13 +60,15 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $result = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'qq' => $data['qq'],
             'level' => 1,
             'password' => bcrypt($data['password']),
         ]);
+        Mail::mail(User::all()->last()->id,"signup","");
+        return $result;
     }
 
 

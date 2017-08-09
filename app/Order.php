@@ -16,7 +16,7 @@ class Order extends Model
 
         $apiid = '13370';
         $apikey = md5('6ce72252d6962a926a26fa2c6d685f6c');
-        $showurl = 'http://'.Setings::whereRaw('name="domain"')->first()->value.'/order/new/result';
+        $showurl = Setings::whereRaw('name="domain"')->first()->value.'/order/new/result';
         $addnum =  'alip'.$apiid.'00'.$no;
         //dd($showurl);
 
@@ -40,7 +40,7 @@ class Order extends Model
 
         $apiid = '13370';
         $apikey = md5('6ce72252d6962a926a26fa2c6d685f6c');
-        $showurl = 'http://127.0.0.1/order/renew/result';
+        $showurl = Setings::whereRaw('name="domain"')->first()->value.'/order/renew/result';
         $addnum =  'alip'.$apiid.'00'.$no;
 
         echo "

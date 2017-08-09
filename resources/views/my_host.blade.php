@@ -39,7 +39,7 @@
                             <p>有效期至：<small>{{$hostinfo->end_at}}</small></p>
                             @if($hostinfo->valid!=0)
                                 <div class="input-group input-inline host-btn-panel">
-                                    <a class="btn btn-link" href="/my_host/panel/{{$hostinfo->host_panel}}">进入控制面板</a>
+                                    <a class="btn btn-link" href="{{\App\Setings::login($hostinfo->host_panel)}}">进入控制面板</a>
                                     {!!  Form::open(['url'=>'/my_host/renew']) !!}
                                         {!! Form::hidden('id',base64_encode($hostinfo->id)) !!}
                                         {!! Form::submit('续费',["class"=>"btn btn-link","style"=>"display:inline"]) !!}

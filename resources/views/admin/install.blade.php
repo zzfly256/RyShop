@@ -21,7 +21,7 @@
         {!! Form::label('站点名称*',null,["class"=>"form-label"]) !!}
         {!! Form::text('site',null,["class"=>"form-input"]) !!}
         {!! Form::label('站点域名*',null,["class"=>"form-label"]) !!}
-        {!! Form::text('siteUrl',$_SERVER['HTTP_HOST'],["class"=>"form-input","placeholder"=>"http://"]) !!}
+        {!! Form::text('siteUrl',"http://".$_SERVER['HTTP_HOST'],["class"=>"form-input","placeholder"=>"http://"]) !!}
         {!! Form::label('程序路径*',null,["class"=>"form-label"]) !!}
         {!! Form::text('url',$dir[0],["class"=>"form-input","disabled"=>"disabled"]) !!}
         {!! Form::label('运行环境*',null,["class"=>"form-label"]) !!}

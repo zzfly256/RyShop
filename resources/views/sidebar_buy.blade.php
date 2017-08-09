@@ -48,8 +48,8 @@
 </ul>
 @if(Auth::User())
     {!!  Form::open(['url'=>'/order/new']) !!}
-    {!! Form::hidden('no',$order_no) !!}
-    {!! Form::hidden('model',$good[0]->model) !!}
+    {!! Form::hidden('order',base64_encode($order_no)) !!}
+    {!! Form::hidden('type',base64_encode($good[0]->model)) !!}
     {!! Form::submit('立即购买',["class"=>"buy-btn"]) !!}
     {!!  Form::close() !!}
 @endif

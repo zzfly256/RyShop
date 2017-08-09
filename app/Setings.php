@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Setings extends Model
 {
     protected $table = 'setings';
@@ -37,6 +38,16 @@ class Setings extends Model
         Setings::create($aff_text);
         $domain = ['name'=>"domain", 'value'=>$siteUrl];
         Setings::create($domain);
+        $mail_smtp = ['name'=>"mail_smtp"];
+        Setings::create($mail_smtp);
+        $mail_port = ['name'=>"mail_port"];
+        Setings::create($mail_port);
+        $mail_user = ['name'=>"mail_user"];
+        Setings::create($mail_user);
+        $mail_password = ['name'=>"mail_password"];
+        Setings::create($mail_password);
+        $mail_address = ['name'=>"mail_address"];
+        Setings::create($mail_address);
     }
 
     public static function server()
@@ -61,6 +72,12 @@ class Setings extends Model
             }
         }
         return $result;
+    }
+
+    public static function login($name)
+    {
+        include "../server/".$name."/setings.php";
+        return $loginPanel;
     }
 
 }

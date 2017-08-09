@@ -44,6 +44,7 @@ get('/admin/users/{id}/edit','AdminController@user_edit');
 patch('/admin/users/{id}','AdminController@user_update');
 // 设置部分
 get('/admin/setings/general','AdminController@setings_general');
+get('/admin/setings/theme','AdminController@setings_theme');
 get('/admin/setings/server','AdminController@setings_server');
 patch('/admin/setings/{id}','AdminController@setings_update');
 // aff
@@ -80,7 +81,6 @@ post('/order/renew/result','OrderController@renew_result');
 get('/admin/vhost','HostController@index');
 get('/admin/vhost/user/{id}','HostController@show_user');
 get('/my_host','HostController@show_mine');
-get('/my_host/panel/{panel}','HostController@show_panel');
 post('/admin/vhost/{id}','HostController@change_status');
 delete('admin/vhost/{id}','HostController@delete_host');
 

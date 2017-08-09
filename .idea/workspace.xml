@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e04c88c3-ac7c-4fe1-8d25-23e6684e1b0a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/README.mdown" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Mail.php" afterPath="$PROJECT_DIR$/app/Mail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/ticket_reply.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/ticket_reply.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,7 +83,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mail.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Mail.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Mail.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="685">
@@ -94,6 +91,26 @@
               <folding>
                 <element signature="e#22#36#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="800">
+              <caret line="25" column="2" lean-forward="false" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phpspec.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phpspec.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,7 +166,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/GoodController.php" />
         <option value="$PROJECT_DIR$/resources/views/good_index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/resources/views/nav.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/news_index.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_08_08_063426_create_news_table.php" />
@@ -184,6 +200,7 @@
         <option value="$PROJECT_DIR$/resources/views/admin/ticket_reply.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TicketController.php" />
         <option value="$PROJECT_DIR$/app/Mail.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -475,7 +492,7 @@
       <workItem from="1501568734388" duration="14308000" />
       <workItem from="1501661079404" duration="14395000" />
       <workItem from="1502172284582" duration="16156000" />
-      <workItem from="1502260969594" duration="18059000" />
+      <workItem from="1502260969594" duration="18326000" />
     </task>
     <task id="LOCAL-00001" summary="完成 用户/物品数据设计">
       <created>1500377784551</created>
@@ -610,11 +627,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502277360836</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="更新 发行README">
+      <created>1502284167776</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1502284167776</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120572000" />
+    <option name="totallyTimeSpent" value="120839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -664,7 +688,8 @@
     <MESSAGE value="添加 新闻系统" />
     <MESSAGE value="修复 新闻添加重定向" />
     <MESSAGE value="添加 邮件系统" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加 邮件系统" />
+    <MESSAGE value="更新 发行README" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新 发行README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -673,22 +698,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Ticket.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="14" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_08_08_063426_create_news_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2017_08_08_075017_add_news_dec.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -1081,6 +1090,22 @@
           <folding>
             <element signature="e#22#36#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpspec.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="25" column="2" lean-forward="false" selection-start-line="25" selection-start-column="2" selection-end-line="25" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>

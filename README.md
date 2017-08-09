@@ -15,15 +15,15 @@ Updated at 8/09/2017
 安装后请确保可以通过命令 ``php -v`` ``composer -v`` 查看到两者的版本
 
 ## 安装
-```shell```
+```
 composer install  #自动安装需求环境
 php artisan migrate  #执行数据库迁移 
-``
+```
 #### 使用 PHP Cli_Server 驱动
-```shell```
+```
 cd public
 php -S 0.0.0.0:80
-``
+```
 #### 使用 Nginx / Apache 等驱动参照 Laravel 框架通用方法，将 /public 设置为工作根目录
 完成上诉步骤后，访问 http://您的域名/install 完成最后安装
 

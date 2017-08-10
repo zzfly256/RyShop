@@ -12,6 +12,7 @@ Updated at 8/09/2017
 - PHP >= 5.5.9
 - MySQL / MariaDB
 - composer
+
 安装后请确保可以通过命令 ``php -v`` ``composer -v`` 查看到两者的版本
 
 ## 安装
@@ -25,7 +26,7 @@ cd public
 php -S 0.0.0.0:80
 ```
 #### 使用 Nginx / Apache 等驱动参照 Laravel 框架通用方法，将 /public 设置为工作根目录
-完成上诉步骤后，访问 http://您的域名/install 完成最后安装
+完成上诉步骤后，访问 ```http://您的域名/install``` 完成最后安装
 
 ## 对接模块
 - 本系统所有与服务器对接的模块放置于 ``/server/`` 下，目录名字即为后台所识别的模块名称

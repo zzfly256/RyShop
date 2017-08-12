@@ -197,4 +197,49 @@ body {
     width: 200px;
     text-align: left; }
 
+.index-panel {
+  line-height: 2.4rem;
+  letter-spacing: 1px; }
+  .index-panel .grid-960 {
+    padding: 25px 10px; }
+  .index-panel .content {
+    padding: 0px; }
+    .index-panel .content .col-md-4 {
+      text-align: center; }
+  .index-panel h2 {
+    font-size: 1.6em; }
+  .index-panel li {
+    list-style: none;
+    line-height: 1.8em;
+    letter-spacing: 1px; }
+    .index-panel li i {
+      width: 30px; }
+  .index-panel i {
+    width: 20px; }
+
+.index-shop {
+  width: 61%;
+  height: 80px;
+  margin: 20px auto 30px auto;
+  text-align: center; }
+  .index-shop span {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-top: 10px; }
+    .index-shop span a {
+      color: #50596c;
+      letter-spacing: 5px;
+      -webkit-transition: 300ms;
+      -moz-transition: 300ms;
+      -ms-transition: 300ms;
+      -o-transition: 300ms;
+      transition: 300ms; }
+      .index-shop span a:hover {
+        text-decoration: none;
+        letter-spacing: 10px; }
+  .index-shop i {
+    float: left;
+    width: 100%; }
+
 /*# sourceMappingURL=style.css.map */

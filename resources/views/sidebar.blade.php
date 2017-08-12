@@ -24,13 +24,13 @@
             <label class="label label-primary">{{Auth::user()->host->count()}}</label>
         </div>
         <a href="/my_host">
-            <i class="icon icon-link"></i> 我的主机
+            <i class="fa fa-ioxhost"></i> 我的主机
         </a>
         <div class="menu-badge">
             <label class="label label-primary">{{Auth::user()->order->count()}}</label>
         </div>
         <a href="/my_order">
-            <i class="icon icon-link"></i> 我的订单
+            <i class="fa fa-th-list"></i> 我的订单
         </a>
     </li>
     <li class="divider" data-content="用户管理">

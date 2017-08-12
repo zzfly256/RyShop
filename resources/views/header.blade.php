@@ -10,6 +10,7 @@
     <meta name="description" content="{!! \App\Setings::whereRaw("name='description'")->first()->value !!}">
     <meta name="keyword" content="{!! \App\Setings::whereRaw("name='keyword'")->first()->value !!}">
     <?php }?>
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>

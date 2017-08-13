@@ -1,16 +1,17 @@
 @section('title')
-    Host in Pocket
+    口袋主机 - Host in Pocket，提供高速虚拟主机、优质VPS服务，涵盖免费空间、香港空间、美国空间、高防空间
 @stop
 @include('header')
 @include('nav')
-
-<section class="container grid-960">
+@if(!empty(\App\Setings::whereRaw("name='index_img'")->first()->value))
+    <img class="index_img" src="{{\App\Setings::whereRaw("name='index_img'")->first()->value}}" alt="{{\App\Setings::whereRaw("name='siteName'")->first()->value}}">
+@endif
+<section class="container grid-960 mt-top">
     <div class="container">
-        @if(!empty(\App\Setings::whereRaw("name='index_img'")->first()->value))
-        <img class="index_img" src="{{\App\Setings::whereRaw("name='index_img'")->first()->value}}" alt="{{\App\Setings::whereRaw("name='siteName'")->first()->value}}">
-        @endif
+
             <div class="columns">
-            @foreach($good as $goodinfo)
+            <?php foreach($good as $goodinfo):?>
+                <?php if($goodinfo->id==4):continue;endif;?>
                 <div class="column col-4 col-md-12">
                     <div class="card">
                         <div class="card-image">
@@ -27,7 +28,7 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+            <?php endforeach;?>
 
         </div>
     </div>
@@ -57,7 +58,7 @@
                 </div>
 
                 <div class="column col-md-3"><b style="font-size: 110%"><i class="fa fa-check-square-o" aria-hidden="true"></i>开发实力雄厚</b>
-                    上线的一切虚拟主机 / VPS ，机房均经过精挑细选，充分考虑用户地区以及访问速度因素，为用户提供低延迟、少绕路、性价比高的良心产品
+                    为了创业的正常进行，技术人员自行开发了一套主机销售与管理系统，方便管理员对用户所购买的产品与订单管理。为用户提供强有力的技术保障
                 </div>
 
                 <div class="column col-md-3">

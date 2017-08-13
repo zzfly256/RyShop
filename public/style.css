@@ -7,6 +7,9 @@ body {
   padding: 15px 20px;
   background: #fff; }
 
+.mt-top {
+  margin-top: 20px; }
+
 .big-font {
   font-size: 120%; }
 
@@ -14,8 +17,7 @@ body {
   background: #ffffff;
   min-height: 50px;
   line-height: 50px;
-  box-shadow: 0 0.1rem 0.1rem rgba(69, 77, 93, 0.16);
-  margin-bottom: 10px; }
+  box-shadow: 0 0.1rem 0.1rem rgba(69, 77, 93, 0.16); }
 
 .menu .menu-item > a {
   text-align: left; }

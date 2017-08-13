@@ -19,6 +19,13 @@ body {
   line-height: 50px;
   box-shadow: 0 0.1rem 0.1rem rgba(69, 77, 93, 0.16); }
 
+.index_menu {
+  background: #051f2e !important; }
+  .index_menu .btn.btn-link {
+    color: #ccc; }
+    .index_menu .btn.btn-link:hover {
+      background: rgba(241, 241, 241, 0.1); }
+
 .menu .menu-item > a {
   text-align: left; }
 

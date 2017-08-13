@@ -24,6 +24,17 @@ body{
   //background: rgba(241, 241, 241, 0.73);
   //font-weight: 300;
 }
+
+.index_menu {
+  background: #051f2e!important;
+  & .btn.btn-link{
+    color:#ccc;
+    &:hover{
+      background: rgba(241, 241, 241, 0.10);
+    }
+  }
+
+}
 .menu .menu-item > a{
   text-align: left;
 }

@@ -111,8 +111,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="584">
-                <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+              <first_editor relative-caret-position="224">
+                <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -510,7 +510,7 @@
       <workItem from="1502536810073" duration="9182000" />
       <workItem from="1502615585984" duration="2383000" />
       <workItem from="1502696538372" duration="3390000" />
-      <workItem from="1502866552912" duration="200000" />
+      <workItem from="1502866552912" duration="609000" />
     </task>
     <task id="LOCAL-00001" summary="完成 用户/物品数据设计">
       <created>1500377784551</created>
@@ -694,11 +694,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502635258154</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="更新 README">
+      <created>1502866765811</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1502866765811</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138287000" />
+    <option name="totallyTimeSpent" value="138696000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -752,7 +759,8 @@
     <MESSAGE value="RELEASE" />
     <MESSAGE value="修改 主页" />
     <MESSAGE value="修改 主页菜单栏效果" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改 主页菜单栏效果" />
+    <MESSAGE value="更新 README" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新 README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1148,8 +1156,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="584">
-            <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <first_editor relative-caret-position="224">
+            <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
             <folding />
           </first_editor>
           <second_editor />

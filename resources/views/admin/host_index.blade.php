@@ -42,6 +42,7 @@
                         </tbody>
                     </table>
                 </div>
+                {!! $good->render() !!}
             </div>
         </div>
     </div>

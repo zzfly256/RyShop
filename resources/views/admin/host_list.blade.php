@@ -69,6 +69,7 @@
                         </tbody>
                     </table>
                 </div>
+                {!! $hosts->render() !!}
             </div>
         </div>
     </div>

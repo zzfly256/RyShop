@@ -62,7 +62,7 @@
                             </table>
                         </div>
 
-
+                    {!! $tic->render() !!}
                 </div>
 
             </div>

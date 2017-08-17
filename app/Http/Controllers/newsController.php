@@ -19,7 +19,7 @@ class newsController extends Controller
      */
     public function user_index()
     {
-        $news = News::orderBy('created_at', 'desc')->paginate(15);
+        $news = News::orderBy('created_at', 'desc')->paginate(8);
         return view('news_index',compact('news'));
     }
 

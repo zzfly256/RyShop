@@ -19,14 +19,14 @@ class HostController extends Controller
      */
     public function index()
     {
-        $hosts = Host::latest()->get();
+        $hosts = Host::latest()->Paginate(10);
         return view("admin.host_list",compact("hosts"));
     }
 
     public function show_mine()
     {
         if (Auth::user()) {
-            $hosts = Auth::user()->host()->orderBy('created_at', 'desc')->get();
+            $hosts = Auth::user()->host()->orderBy('created_at', 'desc')->Paginate(9);
             return view("my_host", compact('hosts'));
         } else {
             return view("my_host");
@@ -37,7 +37,7 @@ class HostController extends Controller
     {
         if(Auth::user() and Auth::user()->level==0)
         {
-            $hosts = User::findOrFail($id)->host;
+            $hosts = User::findOrFail($id)->host()->Paginate(10);
             $user = User::findOrFail($id);
             return view("admin.show_user_host",compact('hosts'))->with("user",$user);
         }

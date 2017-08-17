@@ -18,7 +18,6 @@
                         <a href="/admin/tickets/open" class="new_ticket_btn"> 有效的（<?php echo \App\Ticket::all()->count()-\App\Ticket::all()->where("valid","=",'0')->count();?>）</a>
                     </div>
 
-                    @if(Auth::user()->ticket->count())
                         <div class="ticket-panel">
                             <table class="table table-striped table-hover">
                                 <thead>
@@ -59,7 +58,7 @@
                                 </tbody>
                             </table>
                         </div>
-                    @endif
+                    {!! $tic->render() !!}
 
 
                 </div>

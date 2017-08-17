@@ -49,6 +49,7 @@
 
                         </div>
                     @endforeach
+                    {!! $hosts->render() !!}
 
                 </div>
 

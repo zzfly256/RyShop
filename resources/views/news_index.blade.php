@@ -21,7 +21,7 @@
                 </div>
             @endforeach
 
-
+            {!! $news->render() !!}
 
     </div>
 </section>

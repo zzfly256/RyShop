@@ -46,6 +46,7 @@
                         </tbody>
                     </table>
                 </div>
+                {!! $user->render() !!}
             </div>
         </div>
     </div>

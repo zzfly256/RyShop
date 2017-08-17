@@ -325,3 +325,25 @@ body{
   }
 
 }
+
+.pagination{
+  width:100%;
+  background: #fff;
+  padding:0.5rem;
+  margin-top:10px;
+  & li{
+    padding:0;
+    margin: 0 3px;
+    padding:2px 5px;
+    color:#727e96;
+    font-size: 80%;
+    font-weight:300;
+    & a:hover{
+      text-decoration: none;
+    }
+  }
+  & li[class="active"]{
+    font-size: 80%;
+    font-weight:400;
+  }
+}

@@ -26,32 +26,32 @@ class TicketController extends Controller
     }
     public function admin_index()
     {
-        $tic = Ticket::orderBy("created_at","desc")->get();
+        $tic = Ticket::orderBy("created_at","desc")->Paginate(10);
         //dd($tic);
         return view("admin.tickets_index",compact('tic'));
     }
 
     public function front_open()
     {
-        $tic = Auth::user()->ticket()->whereRaw("valid='1'")->orderBy("created_at","desc")->get();
+        $tic = Auth::user()->ticket()->whereRaw("valid='1'")->orderBy("created_at","desc")->Paginate(10);
         return view("tickets_index",compact('tic'));
     }
 
     public function front_closed()
     {
-        $tic = Auth::user()->ticket()->whereRaw("valid='0'")->orderBy("created_at","desc")->get();
+        $tic = Auth::user()->ticket()->whereRaw("valid='0'")->orderBy("created_at","desc")->Paginate(10);
         return view("tickets_index",compact('tic'));
     }
 
     public function admin_open()
     {
-        $tic = Ticket::whereRaw("valid=1")->orderBy("created_at","desc")->get();
+        $tic = Ticket::whereRaw("valid=1")->orderBy("created_at","desc")->Paginate(10);
         return view("admin.tickets_on",compact('tic'));
     }
 
     public function admin_closed()
     {
-        $tic = Ticket::whereRaw("valid=0")->orderBy("created_at","desc")->get();
+        $tic = Ticket::whereRaw("valid=0")->orderBy("created_at","desc")->Paginate(10);
         return view("admin.tickets_off",compact('tic'));
     }
     /**

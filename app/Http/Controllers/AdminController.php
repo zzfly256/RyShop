@@ -23,19 +23,19 @@ class AdminController extends Controller
      */
     public function host_index()
     {
-        $good = Good::all();
+        $good = Good::Paginate(10);
         return view("admin.host_index",compact('good'));
     }
 
     public function users_index()
     {
-        $user = User::all();
+        $user = User::Paginate(10);
         return view("admin.users_index",compact('user'));
     }
 
     public function orders_index()
     {
-        $order = Order::latest()->get();
+        $order = Order::latest()->Paginate(10);
         return view("admin.orders_index",compact('order'));
     }
 

@@ -30,7 +30,7 @@
 
                    </div>
                @endforeach
-
+                {!! $order->render() !!}
             </div>
         </div>
     </div>

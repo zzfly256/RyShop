@@ -50,6 +50,7 @@
                         </tbody>
                     </table>
                 </div>
+                {!! $order->render() !!}
             </div>
         </div>
     </div>

@@ -184,7 +184,7 @@ class OrderController extends Controller
 
     public function show_paid()
     {
-        $order = Order::whereRaw("payout='1'")->get();
+        $order = Order::whereRaw("payout='1'")->Paginate(10);
         return view("admin.orders_index",compact('order'));
     }
 
@@ -197,7 +197,7 @@ class OrderController extends Controller
 
     public function show_unpaid()
     {
-        $order = Order::whereRaw("payout='0'")->get();
+        $order = Order::whereRaw("payout='0'")->Paginate(10);
         return view("admin.order_unpaid",compact('order'));
     }
 
@@ -213,7 +213,7 @@ class OrderController extends Controller
     {
         if(Auth::user())
         {
-            $order = Auth::user()->order()->orderBy('created_at', 'desc')->get();
+            $order = Auth::user()->order()->orderBy('created_at', 'desc')->Paginate(8);
             return view("my_order",compact('order'));
         }
         else
@@ -227,7 +227,7 @@ class OrderController extends Controller
     {
         if(Auth::user())
         {
-            $order = Auth::user()->order()->whereRaw("payout='1'")->orderBy('created_at', 'desc')->get();
+            $order = Auth::user()->order()->whereRaw("payout='1'")->orderBy('created_at', 'desc')->Paginate(8);
             return view("my_order",compact('order'));
         }
         else
@@ -241,7 +241,7 @@ class OrderController extends Controller
     {
         if(Auth::user())
         {
-            $order = Auth::user()->order()->whereRaw("payout='0'")->orderBy('created_at', 'desc')->get();
+            $order = Auth::user()->order()->whereRaw("payout='0'")->orderBy('created_at', 'desc')->Paginate(8);
             return view("my_order",compact('order'));
         }
         else
@@ -254,7 +254,7 @@ class OrderController extends Controller
     {
         if(Auth::user() and Auth::user()->level==0)
         {
-            $order = User::findOrFail($id)->order()->orderBy('created_at', 'desc')->get();
+            $order = User::findOrFail($id)->order()->orderBy('created_at', 'desc')->Paginate(10);
             $user = User::findOrFail($id);
             return view("admin.show_user_order",compact('order'))->with("user",$user);
         }

@@ -19,7 +19,7 @@
                 </div>
                 @foreach($order as $orderinfo)
                     <div class="order-item">
-                        <span class="big-font"><?php $good = App\Good::whereRaw("model='".$orderinfo->model."'")->get(); echo $good[0]->name ?? "已下架";?><small class="model-label"><small>{{$orderinfo->model}}</small></small>
+                        <span class="big-font"><?php $good = App\Good::whereRaw("model='".$orderinfo->model."'")->get(); if(empty($good[0]->name)){echo "已下架";}else{echo $good[0]->name;};?><small class="model-label"><small>{{$orderinfo->model}}</small></small>
                         </span>
                         <br>
                         <span>有效期至：{{$orderinfo->end_at}}</span>

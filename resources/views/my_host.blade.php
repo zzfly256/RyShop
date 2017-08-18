@@ -20,7 +20,7 @@
 
                         <div class="column col-4 col-md-12 my_host_item">
 
-                        <span class="tooltip big-font tooltip-right" data-tooltip="{{$hostinfo->model}}"><?php $good = App\Good::whereRaw("model='".$hostinfo->model."'")->get(); echo $good[0]->name ?? "已下架";?></span>
+                        <span class="tooltip big-font tooltip-right" data-tooltip="{{$hostinfo->model}}"><?php $good = App\Good::whereRaw("model='".$hostinfo->model."'")->get();if(empty($good[0]->name)){echo "已下架";}else{echo $good[0]->name;}?></span>
 
                         <div class="status">
                                 @if($hostinfo->valid==1)

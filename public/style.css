@@ -36,7 +36,7 @@ body {
   line-height: 50px; }
   .navbar-section a:hover {
     color: #8689a0 !important;
-    background: rgba(241, 241, 241, 0.55); }
+    background: rgba(241, 241, 241, 0.1); }
 
 .login-panel {
   width: 400px;

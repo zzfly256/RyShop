@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e04c88c3-ac7c-4fe1-8d25-23e6684e1b0a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/.sass-cache/97170e8774f7ce4b8e6672fbfc9ce173762933fb/raw.scssc" afterPath="$PROJECT_DIR$/public/.sass-cache/97170e8774f7ce4b8e6672fbfc9ce173762933fb/raw.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/RyShop.iml" afterPath="$PROJECT_DIR$/.idea/RyShop.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/raw.scss" afterPath="$PROJECT_DIR$/public/raw.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/style.css" afterPath="$PROJECT_DIR$/public/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/style.css.map" afterPath="$PROJECT_DIR$/public/style.css.map" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +20,8 @@
       <file leaf-file-name="raw.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/raw.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="772">
-              <caret line="57" column="13" lean-forward="true" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+            <state relative-caret-position="369">
+              <caret line="219" column="21" lean-forward="true" selection-start-line="219" selection-start-column="21" selection-end-line="219" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -432,7 +427,7 @@
       <workItem from="1502954034659" duration="6855000" />
       <workItem from="1503064400328" duration="53000" />
       <workItem from="1503840798994" duration="73000" />
-      <workItem from="1505477440523" duration="109000" />
+      <workItem from="1505477440523" duration="309000" />
     </task>
     <task id="LOCAL-00001" summary="完成 用户/物品数据设计">
       <created>1500377784551</created>
@@ -665,11 +660,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503840862487</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="更新 商标样式">
+      <created>1505477580198</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1505477580198</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145801000" />
+    <option name="totallyTimeSpent" value="146001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -703,7 +705,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完成 用户/物品数据设计" />
     <MESSAGE value="完成 登录/注册" />
     <MESSAGE value="完成 用户模块" />
     <MESSAGE value="调整 配色" />
@@ -728,7 +729,8 @@
     <MESSAGE value="添加 前台TOS展示" />
     <MESSAGE value="修复 PHP5不兼容??新特性" />
     <MESSAGE value="更新 文档" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新 文档" />
+    <MESSAGE value="更新 商标样式" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新 商标样式" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1114,8 +1116,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/raw.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="57" column="13" lean-forward="true" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+        <state relative-caret-position="369">
+          <caret line="219" column="21" lean-forward="true" selection-start-line="219" selection-start-column="21" selection-end-line="219" selection-end-column="21" />
           <folding />
         </state>
       </provider>

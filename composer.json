@@ -1,0 +1,21 @@
+{
+    "name": "zzfly256/ryshop",
+    "description": "A simple shop for vhost and vps.",
+    "type": "project",
+    "require": {
+        "php-quickorm/framework": "^1.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rytia",
+            "email": "admin@zzfly.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Model\\": "App/Model/",
+            "Controller\\": "App/Controller/"
+        }
+    }
+}

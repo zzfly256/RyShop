@@ -62,7 +62,7 @@ class UserController extends Controller
             if(!is_null($this->request()->get('level'))) {
                 $user->level = $this->request()->get('level');
             }
-            if(!is_null($this->request()->get('name'))) {
+            if(!is_null($this->request()->get('password'))) {
                 $user->password = md5("rY".$this->request->get('password')."sHOP");
             }
             if ($user->save()){

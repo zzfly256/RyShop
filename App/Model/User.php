@@ -4,9 +4,9 @@ namespace Model;
 use System\Model;
 
 /**
- * Class User
- * @package Model
- * RyShop 用户模型
+ * Class Good
+ * @package Good
+ * RyShop 商品模型
  */
 class User extends Model
 {

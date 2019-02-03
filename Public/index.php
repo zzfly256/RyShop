@@ -22,4 +22,4 @@ set_error_handler('\System\Utility\Exception::errorReport');
 set_exception_handler('\System\Utility\Exception::exceptionReport');
 
 // 启动路由系统处理请求
-Route::initialize(new Request(), new Response(), false);
+Route::initialize(new Request(), new Response(), true);

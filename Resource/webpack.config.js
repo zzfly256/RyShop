@@ -7,7 +7,7 @@ module.exports = {
     mode: "development",
     entry: "./js/entry.js",
     output: {
-        path: path.resolve(__dirname, '../Public/js'),
+        path: path.resolve(__dirname, '../Public/static'),
         filename: "bundle.js"
     },
     module: {
@@ -26,7 +26,10 @@ module.exports = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
-                loader: 'file-loader'
+                loader: 'file-loader',
+                options: {
+                    publicPath: './static/'
+                }
             },
             {
                 test: /\.vue$/,

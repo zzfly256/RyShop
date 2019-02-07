@@ -40,11 +40,11 @@ class GoodController extends Controller
 
     public function infoGet($id){
 
-        $user = User::find($id);
-        if (is_null($user)){
+        $item = Good::find($id);
+        if (is_null($item)){
             return $this->response("","404", "500404",'未找到商品ID:'.$id);
         } else {
-            return $this->response($user);
+            return $this->response($item);
         }
     }
 
@@ -72,7 +72,7 @@ class GoodController extends Controller
                 $item->type_id = $this->request()->get('type_id');
             }
             if ($item->save()){
-                return $this->response($user);
+                return $this->response($item);
             } else {
                 return $this->response("","500", "500000",'修改失败');
             }
